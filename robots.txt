@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://droko1982.github.io/by-natalia-brows-and-lashes/sitemap.xml
