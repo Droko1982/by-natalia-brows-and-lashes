@@ -771,6 +771,13 @@
             padding: 6px 22px; border-radius: 50px; font-size: 0.82rem; font-weight: 600;
         }
 
+        .service-link {
+            display: block; margin-top: 12px; font-size: 0.8rem; font-weight: 600;
+            color: var(--text-accent); transition: var(--transition);
+        }
+
+        .service-link:hover { color: var(--accent-hover); letter-spacing: 0.5px; }
+
         /* ============ PROCESS ============ */
         .process { background: var(--bg-primary); }
 
@@ -1391,6 +1398,32 @@
             .cta-buttons { flex-direction: column; align-items: center; }
         }
 
+        /* ============ STICKY MOBILE CTA ============ */
+        .sticky-cta {
+            display: none; position: fixed; bottom: 0; left: 0; right: 0;
+            z-index: 997; background: var(--gradient-cta);
+            padding: 10px 16px; box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            text-align: center; transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .sticky-cta.visible { transform: translateY(0); }
+
+        .sticky-cta a {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            color: white; font-weight: 700; font-size: 0.92rem; font-family: var(--font-body);
+        }
+
+        .sticky-cta .urgency-text {
+            display: block; font-size: 0.68rem; font-weight: 400;
+            color: rgba(255,255,255,0.85); margin-top: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta { display: block; }
+            .whatsapp-float { bottom: 72px; }
+        }
+
         /* ============ CAT LOGO SVG ============ */
         .cat-logo-svg { width: 34px; height: 34px; flex-shrink: 0; }
         .cat-logo-svg .cat-body { fill: var(--text-accent); }
@@ -1761,24 +1794,28 @@
                     <h3 data-es="Microblading" data-en="Microblading">Microblading</h3>
                     <p data-es="T&eacute;cnica pelo a pelo semipermanente que crea cejas hiperrealistas. Resultados naturales que duran hasta 18 meses con dise&ntilde;o de proporci&oacute;n &aacute;urea." data-en="Semi-permanent hair-stroke technique creating hyper-realistic brows. Natural results lasting up to 18 months with golden ratio design.">T&eacute;cnica pelo a pelo semipermanente que crea cejas hiperrealistas. Resultados naturales que duran hasta 18 meses con dise&ntilde;o de proporci&oacute;n &aacute;urea.</p>
                     <div class="service-price" data-es="Desde $180.000" data-en="From $180,000 COP">Desde $180.000</div>
+                    <a href="#precios" class="service-link" data-es="Ver precios &rarr;" data-en="See pricing &rarr;">Ver precios &rarr;</a>
                 </div>
                 <div class="service-card animate-on-scroll delay-2">
                     <img src="images/service-lash-lifting.jpeg" alt="Lash lifting pestanas Armenia Quindio Moritas" class="service-img" loading="lazy">
                     <h3 data-es="Lash Lifting" data-en="Lash Lifting">Lash Lifting</h3>
                     <p data-es="Elevaci&oacute;n y rizado de tus pesta&ntilde;as naturales con tinte incluido. Efecto ojos abiertos y mirada impactante. Dura hasta 8 semanas." data-en="Lift and curl your natural lashes with tint included. Open-eye effect and stunning look. Lasts up to 8 weeks.">Elevaci&oacute;n y rizado de tus pesta&ntilde;as naturales con tinte incluido. Efecto ojos abiertos y mirada impactante. Dura hasta 8 semanas.</p>
                     <div class="service-price" data-es="Desde $70.000" data-en="From $70,000 COP">Desde $70.000</div>
+                    <a href="#precios" class="service-link" data-es="Ver precios &rarr;" data-en="See pricing &rarr;">Ver precios &rarr;</a>
                 </div>
                 <div class="service-card animate-on-scroll delay-3">
                     <img src="images/service-extensiones.jpeg" alt="Extensiones pestanas pelo a pelo Armenia Moritas" class="service-img" loading="lazy">
                     <h3 data-es="Extensiones de Pesta&ntilde;as" data-en="Lash Extensions">Extensiones de Pesta&ntilde;as</h3>
                     <p data-es="Pelo a pelo, volumen ruso, mega volumen e h&iacute;brido. Fibras premium de seda y vis&oacute;n sint&eacute;tico. Look personalizado: natural, glam o drama." data-en="Hair-by-hair, Russian volume, mega volume &amp; hybrid. Premium silk and synthetic mink fibers. Custom looks: natural, glam, or drama.">Pelo a pelo, volumen ruso, mega volumen e h&iacute;brido. Fibras premium de seda y vis&oacute;n sint&eacute;tico. Look personalizado: natural, glam o drama.</p>
                     <div class="service-price" data-es="Desde $100.000" data-en="From $100,000 COP">Desde $100.000</div>
+                    <a href="#precios" class="service-link" data-es="Ver precios &rarr;" data-en="See pricing &rarr;">Ver precios &rarr;</a>
                 </div>
                 <div class="service-card animate-on-scroll delay-4">
                     <img src="images/service-diseno.jpeg" alt="Diseno de cejas profesional Armenia Quindio Moritas" class="service-img" loading="lazy">
                     <h3 data-es="Dise&ntilde;o de Cejas" data-en="Brow Design">Dise&ntilde;o de Cejas</h3>
                     <p data-es="Depilaci&oacute;n con hilo o cera, perfilado, tinte y laminado. Dise&ntilde;o basado en visagismo y morfolog&iacute;a facial para cejas perfectas." data-en="Thread or wax removal, shaping, tint and lamination. Design based on face morphology for perfect brows.">Depilaci&oacute;n con hilo o cera, perfilado, tinte y laminado. Dise&ntilde;o basado en visagismo y morfolog&iacute;a facial para cejas perfectas.</p>
                     <div class="service-price" data-es="Desde $30.000" data-en="From $30,000 COP">Desde $30.000</div>
+                    <a href="#precios" class="service-link" data-es="Ver precios &rarr;" data-en="See pricing &rarr;">Ver precios &rarr;</a>
                 </div>
             </div>
         </div>
@@ -2325,13 +2362,23 @@
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </button>
 
+    <!-- STICKY MOBILE CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="https://wa.me/573028386938?text=Hola%20Moritas%20%F0%9F%AB%90%E2%9C%A8%20quiero%20agendar%20mi%20cita" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-es="Agendar Cita Ahora" data-en="Book Now">Agendar Cita Ahora</span>
+            <span class="urgency-text" data-es="Pocas citas disponibles esta semana" data-en="Few appointments left this week">Pocas citas disponibles esta semana</span>
+        </a>
+    </div>
+
     <!-- SCROLL TO TOP -->
     <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 
     <!-- JAVASCRIPT -->
     <script>
-        // ===== PARTICLES =====
+        // ===== PARTICLES (disabled on mobile for performance) =====
         (function() {
+            if (window.innerWidth < 768) return;
             const canvas = document.getElementById('particles-canvas');
             const ctx = canvas.getContext('2d');
             let particles = [];
@@ -2495,6 +2542,10 @@
 
             navbar.classList.toggle('scrolled', window.pageYOffset > 80);
             scrollTop.classList.toggle('visible', window.pageYOffset > 500);
+
+            // Sticky CTA appears after scrolling past hero
+            const stickyCta = document.getElementById('stickyCta');
+            if (stickyCta) stickyCta.classList.toggle('visible', window.pageYOffset > 600);
         });
 
         // ===== SMOOTH SCROLL =====
@@ -2512,7 +2563,7 @@
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('preloader').classList.add('hidden');
-            }, 1800);
+            }, 800);
         });
 
         // ===== WHATSAPP POPUP =====
@@ -2522,13 +2573,16 @@
             document.getElementById('waPopup').classList.toggle('active', waPopupOpen);
         }
 
-        // Auto-show popup after 8 seconds
-        setTimeout(() => {
-            if (!waPopupOpen) {
-                waPopupOpen = true;
-                document.getElementById('waPopup').classList.add('active');
-            }
-        }, 8000);
+        // Auto-show popup after 10 seconds (only once per session)
+        if (!sessionStorage.getItem('waPopupShown')) {
+            setTimeout(() => {
+                if (!waPopupOpen) {
+                    waPopupOpen = true;
+                    document.getElementById('waPopup').classList.add('active');
+                    sessionStorage.setItem('waPopupShown', '1');
+                }
+            }, 10000);
+        }
 
         // ===== BEFORE/AFTER SLIDER =====
         document.querySelectorAll('[data-slider]').forEach(slider => {
