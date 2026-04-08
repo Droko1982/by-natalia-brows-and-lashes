@@ -222,8 +222,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Favicon SVG -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫐</text></svg>">
+    <!-- Favicon SVG - Cat Logo -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M15 75 Q15 35 30 20 L35 5 Q38 15 40 20 Q50 12 60 20 Q62 15 65 5 L70 20 Q85 35 85 75 Q85 95 50 95 Q15 95 15 75Z' fill='%23C45B8A'/%3E%3Cellipse cx='37' cy='52' rx='8' ry='9' fill='white'/%3E%3Cellipse cx='63' cy='52' rx='8' ry='9' fill='white'/%3E%3Cellipse cx='38' cy='52' rx='4' ry='5.5' fill='%231a1118'/%3E%3Cellipse cx='64' cy='52' rx='4' ry='5.5' fill='%231a1118'/%3E%3Cpath d='M46 65 Q50 70 54 65' stroke='%231a1118' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Cellipse cx='50' cy='63' rx='3' ry='2' fill='%23FFB0C8'/%3E%3Cpath d='M22 49 Q28 44 30 48' stroke='%23C45B8A' stroke-width='1.5' fill='none'/%3E%3Cpath d='M20 54 Q28 50 30 53' stroke='%23C45B8A' stroke-width='1.5' fill='none'/%3E%3Cpath d='M78 49 Q72 44 70 48' stroke='%23C45B8A' stroke-width='1.5' fill='none'/%3E%3Cpath d='M80 54 Q72 50 70 53' stroke='%23C45B8A' stroke-width='1.5' fill='none'/%3E%3Cpath d='M24 42 Q29 36 33 46' stroke='%23222' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M21 38 Q28 33 32 43' stroke='%23222' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M27 45 Q30 39 35 48' stroke='%23222' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M76 42 Q71 36 67 46' stroke='%23222' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M79 38 Q72 33 68 43' stroke='%23222' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M73 45 Q70 39 65 48' stroke='%23222' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 
     <style>
         :root {
@@ -1213,9 +1213,236 @@
             .footer-bottom { flex-direction: column; text-align: center; }
             .cta-buttons { flex-direction: column; align-items: center; }
         }
+
+        /* ============ CAT LOGO SVG ============ */
+        .cat-logo-svg { width: 34px; height: 34px; flex-shrink: 0; }
+        .cat-logo-svg .cat-body { fill: var(--text-accent); }
+        .cat-logo-svg .cat-eye { fill: var(--bg-primary); }
+        .cat-logo-svg .cat-pupil { fill: var(--text-primary); }
+        .cat-logo-svg .cat-nose { fill: #FFB0C8; }
+        .cat-logo-svg .cat-lash { stroke: var(--text-primary); fill: none; stroke-linecap: round; }
+        .cat-logo-svg .cat-whisker { stroke: var(--text-accent); fill: none; }
+
+        /* ============ PRELOADER ============ */
+        .preloader {
+            position: fixed; inset: 0; z-index: 9999;
+            background: var(--bg-primary);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        .preloader-cat {
+            width: 80px; height: 80px;
+            animation: preloaderBounce 1s ease-in-out infinite, preloaderFade 1s ease-in-out infinite;
+        }
+
+        @keyframes preloaderBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        @keyframes preloaderFade {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .preloader-text {
+            margin-top: 20px; font-family: var(--font-heading);
+            font-size: 1.1rem; color: var(--text-accent);
+            letter-spacing: 3px; text-transform: uppercase;
+            animation: preloaderFade 1s ease-in-out infinite 0.3s;
+        }
+
+        .preloader-bar {
+            width: 120px; height: 3px; background: var(--border);
+            border-radius: 3px; margin-top: 16px; overflow: hidden;
+        }
+
+        .preloader-bar-fill {
+            width: 0%; height: 100%; background: var(--gradient-accent);
+            border-radius: 3px; animation: preloaderFill 1.5s ease-in-out forwards;
+        }
+
+        @keyframes preloaderFill { to { width: 100%; } }
+
+        /* ============ INTERACTIVE BA SLIDER ============ */
+        .ba-slider-container {
+            position: relative; overflow: hidden; border-radius: var(--radius);
+            border: 1px solid var(--border); cursor: ew-resize;
+            box-shadow: var(--shadow-card); user-select: none;
+        }
+
+        .ba-slider-container img {
+            display: block; width: 100%; height: 350px; object-fit: cover;
+        }
+
+        .ba-slider-after {
+            position: absolute; top: 0; left: 0; bottom: 0;
+            width: 50%; overflow: hidden;
+        }
+
+        .ba-slider-after img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            min-width: 0;
+        }
+
+        .ba-slider-handle {
+            position: absolute; top: 0; bottom: 0; left: 50%;
+            width: 4px; background: white;
+            transform: translateX(-50%); z-index: 3;
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);
+        }
+
+        .ba-slider-handle::after {
+            content: ''; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px; height: 40px; background: white;
+            border-radius: 50%; box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .ba-slider-handle-arrows {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%); z-index: 4;
+            color: var(--accent-hover); font-size: 0.85rem; font-weight: 700;
+            pointer-events: none; letter-spacing: 8px;
+        }
+
+        .ba-slider-label {
+            position: absolute; bottom: 12px; padding: 5px 14px;
+            background: rgba(0,0,0,0.6); color: white; font-size: 0.72rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+            border-radius: 6px; z-index: 2;
+        }
+
+        .ba-slider-label.before-label { left: 12px; }
+        .ba-slider-label.after-label { right: 12px; }
+
+        @media (max-width: 640px) {
+            .ba-slider-container img, .ba-slider-after { height: 250px; }
+        }
+
+        /* ============ WHATSAPP POPUP ============ */
+        .wa-popup {
+            position: fixed; bottom: 100px; right: 28px; z-index: 997;
+            width: 320px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(20px) scale(0.9);
+            opacity: 0; visibility: hidden;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .wa-popup.active {
+            transform: translateY(0) scale(1);
+            opacity: 1; visibility: visible;
+        }
+
+        .wa-popup-header {
+            background: var(--whatsapp); color: white;
+            padding: 18px 20px; border-radius: var(--radius) var(--radius) 0 0;
+            display: flex; align-items: center; gap: 12px;
+        }
+
+        .wa-popup-avatar {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(255,255,255,0.2); display: flex;
+            align-items: center; justify-content: center; flex-shrink: 0;
+        }
+
+        .wa-popup-name { font-weight: 700; font-size: 0.92rem; }
+        .wa-popup-status { font-size: 0.72rem; opacity: 0.85; }
+
+        .wa-popup-close {
+            position: absolute; top: 12px; right: 14px;
+            background: none; border: none; color: white;
+            font-size: 1.2rem; cursor: pointer; opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .wa-popup-close:hover { opacity: 1; }
+
+        .wa-popup-body { padding: 20px; }
+
+        .wa-popup-msg {
+            background: var(--bg-accent); border-radius: 0 12px 12px 12px;
+            padding: 14px 16px; font-size: 0.85rem; color: var(--text-primary);
+            line-height: 1.6; margin-bottom: 16px; position: relative;
+        }
+
+        .wa-popup-msg::before {
+            content: ''; position: absolute; top: 0; left: -8px;
+            border-width: 0 8px 8px 0; border-style: solid;
+            border-color: transparent var(--bg-accent) transparent transparent;
+        }
+
+        .wa-popup-msg .msg-time {
+            display: block; text-align: right; font-size: 0.65rem;
+            color: var(--text-secondary); margin-top: 6px;
+        }
+
+        .wa-popup-options {
+            display: flex; flex-direction: column; gap: 8px;
+        }
+
+        .wa-popup-opt {
+            display: block; padding: 10px 16px; background: var(--bg-accent);
+            border: 1px solid var(--border); border-radius: 10px;
+            font-size: 0.82rem; color: var(--text-primary); font-weight: 500;
+            text-align: center; transition: var(--transition);
+            font-family: var(--font-body);
+        }
+
+        .wa-popup-opt:hover {
+            background: var(--accent-light); border-color: var(--border-strong);
+            color: var(--text-accent);
+        }
+
+        @media (max-width: 640px) {
+            .wa-popup { width: calc(100vw - 40px); right: 20px; bottom: 96px; }
+        }
+
+        /* ============ PARALLAX ============ */
+        .parallax-section {
+            background-attachment: fixed; background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 968px) {
+            .parallax-section { background-attachment: scroll; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <svg class="preloader-cat" viewBox="0 0 100 100">
+            <path class="cat-body" d="M15 75 Q15 35 30 20 L35 5 Q38 15 40 20 Q50 12 60 20 Q62 15 65 5 L70 20 Q85 35 85 75 Q85 95 50 95 Q15 95 15 75Z" fill="var(--text-accent)"/>
+            <ellipse class="cat-eye" cx="37" cy="52" rx="8" ry="9" fill="white"/>
+            <ellipse class="cat-eye" cx="63" cy="52" rx="8" ry="9" fill="white"/>
+            <ellipse class="cat-pupil" cx="38" cy="52" rx="4" ry="5.5" fill="#1a1118"/>
+            <ellipse class="cat-pupil" cx="64" cy="52" rx="4" ry="5.5" fill="#1a1118"/>
+            <ellipse class="cat-nose" cx="50" cy="63" rx="3" ry="2" fill="#FFB0C8"/>
+            <path d="M46 65 Q50 70 54 65" stroke="#1a1118" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- Lashes -->
+            <path class="cat-lash" d="M24 42 Q29 36 33 46" stroke-width="2.5"/>
+            <path class="cat-lash" d="M21 38 Q28 33 32 43" stroke-width="2"/>
+            <path class="cat-lash" d="M27 45 Q30 39 35 48" stroke-width="2"/>
+            <path class="cat-lash" d="M76 42 Q71 36 67 46" stroke-width="2.5"/>
+            <path class="cat-lash" d="M79 38 Q72 33 68 43" stroke-width="2"/>
+            <path class="cat-lash" d="M73 45 Q70 39 65 48" stroke-width="2"/>
+            <!-- Whiskers -->
+            <path class="cat-whisker" d="M22 55 Q28 52 32 55" stroke-width="1.5"/>
+            <path class="cat-whisker" d="M20 60 Q28 58 32 59" stroke-width="1.5"/>
+            <path class="cat-whisker" d="M78 55 Q72 52 68 55" stroke-width="1.5"/>
+            <path class="cat-whisker" d="M80 60 Q72 58 68 59" stroke-width="1.5"/>
+        </svg>
+        <div class="preloader-text">Moritas</div>
+        <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+    </div>
 
     <!-- Particles -->
     <canvas id="particles-canvas"></canvas>
@@ -1224,7 +1451,26 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="nav-logo">
-                <span class="logo-dot"></span>Moritas <span>Estudio de Belleza</span>
+                <svg class="cat-logo-svg" viewBox="0 0 100 100">
+                    <path class="cat-body" d="M15 75 Q15 35 30 20 L35 5 Q38 15 40 20 Q50 12 60 20 Q62 15 65 5 L70 20 Q85 35 85 75 Q85 95 50 95 Q15 95 15 75Z"/>
+                    <ellipse class="cat-eye" cx="37" cy="52" rx="8" ry="9"/>
+                    <ellipse class="cat-eye" cx="63" cy="52" rx="8" ry="9"/>
+                    <ellipse class="cat-pupil" cx="38" cy="52" rx="4" ry="5.5"/>
+                    <ellipse class="cat-pupil" cx="64" cy="52" rx="4" ry="5.5"/>
+                    <ellipse class="cat-nose" cx="50" cy="63" rx="3" ry="2"/>
+                    <path d="M46 65 Q50 70 54 65" stroke="#1a1118" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <path class="cat-lash" d="M24 42 Q29 36 33 46" stroke-width="2.5"/>
+                    <path class="cat-lash" d="M21 38 Q28 33 32 43" stroke-width="2"/>
+                    <path class="cat-lash" d="M27 45 Q30 39 35 48" stroke-width="2"/>
+                    <path class="cat-lash" d="M76 42 Q71 36 67 46" stroke-width="2.5"/>
+                    <path class="cat-lash" d="M79 38 Q72 33 68 43" stroke-width="2"/>
+                    <path class="cat-lash" d="M73 45 Q70 39 65 48" stroke-width="2"/>
+                    <path class="cat-whisker" d="M22 55 Q28 52 32 55" stroke-width="1.5"/>
+                    <path class="cat-whisker" d="M20 60 Q28 58 32 59" stroke-width="1.5"/>
+                    <path class="cat-whisker" d="M78 55 Q72 52 68 55" stroke-width="1.5"/>
+                    <path class="cat-whisker" d="M80 60 Q72 58 68 59" stroke-width="1.5"/>
+                </svg>
+                Moritas <span>Estudio de Belleza</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
@@ -1540,43 +1786,55 @@
                 <p class="section-subtitle" data-es="Transformaciones reales que hablan por s&iacute; mismas. Cada resultado refleja nuestro compromiso con la excelencia." data-en="Real transformations that speak for themselves. Each result reflects our commitment to excellence.">Transformaciones reales que hablan por s&iacute; mismas. Cada resultado refleja nuestro compromiso con la excelencia.</p>
             </div>
             <div class="ba-grid">
-                <div class="ba-card animate-on-scroll delay-1">
-                    <div class="ba-images">
-                        <img src="https://images.unsplash.com/photo-1588528402605-6e6e1b724f79?w=400&h=200&fit=crop&crop=top" alt="Antes del microblading de cejas Armenia" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&h=200&fit=crop&crop=top" alt="Despues del microblading de cejas Armenia Moritas" loading="lazy">
-                        <span class="ba-label before" data-es="Antes" data-en="Before">Antes</span>
-                        <span class="ba-label after" data-es="Despu&eacute;s" data-en="After">Despu&eacute;s</span>
-                        <div class="ba-divider"></div>
+                <!-- Interactive Slider 1 -->
+                <div class="animate-on-scroll delay-1">
+                    <div class="ba-slider-container" data-slider>
+                        <img src="https://images.unsplash.com/photo-1588528402605-6e6e1b724f79?w=700&h=350&fit=crop&crop=top" alt="Antes microblading cejas Armenia Moritas" loading="lazy">
+                        <div class="ba-slider-after">
+                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&h=350&fit=crop&crop=top" alt="Despues microblading cejas Armenia Moritas" loading="lazy">
+                        </div>
+                        <div class="ba-slider-handle"></div>
+                        <div class="ba-slider-handle-arrows">&larr; &rarr;</div>
+                        <span class="ba-slider-label before-label" data-es="Antes" data-en="Before">Antes</span>
+                        <span class="ba-slider-label after-label" data-es="Despu&eacute;s" data-en="After">Despu&eacute;s</span>
                     </div>
-                    <div class="ba-info">
+                    <div class="ba-info" style="text-align:center;padding:16px">
                         <h4 data-es="Microblading Pelo a Pelo" data-en="Hair-Stroke Microblading">Microblading Pelo a Pelo</h4>
-                        <p data-es="Cejas naturales y definidas con t&eacute;cnica de proporci&oacute;n &aacute;urea" data-en="Natural, defined brows with golden ratio technique">Cejas naturales y definidas con t&eacute;cnica de proporci&oacute;n &aacute;urea</p>
+                        <p data-es="Arrastra para ver la transformaci&oacute;n" data-en="Drag to see the transformation">Arrastra para ver la transformaci&oacute;n</p>
                     </div>
                 </div>
-                <div class="ba-card animate-on-scroll delay-2">
-                    <div class="ba-images">
-                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=200&fit=crop&crop=top" alt="Antes extensiones pestanas Armenia" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=400&h=200&fit=crop" alt="Despues extensiones pestanas volumen ruso Armenia Moritas" loading="lazy">
-                        <span class="ba-label before" data-es="Antes" data-en="Before">Antes</span>
-                        <span class="ba-label after" data-es="Despu&eacute;s" data-en="After">Despu&eacute;s</span>
-                        <div class="ba-divider"></div>
+                <!-- Interactive Slider 2 -->
+                <div class="animate-on-scroll delay-2">
+                    <div class="ba-slider-container" data-slider>
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=700&h=350&fit=crop&crop=top" alt="Antes extensiones pestanas Armenia" loading="lazy">
+                        <div class="ba-slider-after">
+                            <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=700&h=350&fit=crop" alt="Despues extensiones pestanas volumen Armenia Moritas" loading="lazy">
+                        </div>
+                        <div class="ba-slider-handle"></div>
+                        <div class="ba-slider-handle-arrows">&larr; &rarr;</div>
+                        <span class="ba-slider-label before-label" data-es="Antes" data-en="Before">Antes</span>
+                        <span class="ba-slider-label after-label" data-es="Despu&eacute;s" data-en="After">Despu&eacute;s</span>
                     </div>
-                    <div class="ba-info">
+                    <div class="ba-info" style="text-align:center;padding:16px">
                         <h4 data-es="Extensiones Volumen Ruso" data-en="Russian Volume Extensions">Extensiones Volumen Ruso</h4>
-                        <p data-es="Pesta&ntilde;as con volumen y densidad profesional" data-en="Lashes with professional volume and density">Pesta&ntilde;as con volumen y densidad profesional</p>
+                        <p data-es="Arrastra para ver la transformaci&oacute;n" data-en="Drag to see the transformation">Arrastra para ver la transformaci&oacute;n</p>
                     </div>
                 </div>
-                <div class="ba-card animate-on-scroll delay-3">
-                    <div class="ba-images">
-                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=200&fit=crop" alt="Antes lash lifting Armenia Quindio" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=200&fit=crop&crop=top" alt="Despues lash lifting Armenia Moritas Estudio" loading="lazy">
-                        <span class="ba-label before" data-es="Antes" data-en="Before">Antes</span>
-                        <span class="ba-label after" data-es="Despu&eacute;s" data-en="After">Despu&eacute;s</span>
-                        <div class="ba-divider"></div>
+                <!-- Interactive Slider 3 -->
+                <div class="animate-on-scroll delay-3">
+                    <div class="ba-slider-container" data-slider>
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&h=350&fit=crop" alt="Antes lash lifting Armenia Quindio" loading="lazy">
+                        <div class="ba-slider-after">
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&h=350&fit=crop&crop=top" alt="Despues lash lifting Armenia Moritas" loading="lazy">
+                        </div>
+                        <div class="ba-slider-handle"></div>
+                        <div class="ba-slider-handle-arrows">&larr; &rarr;</div>
+                        <span class="ba-slider-label before-label" data-es="Antes" data-en="Before">Antes</span>
+                        <span class="ba-slider-label after-label" data-es="Despu&eacute;s" data-en="After">Despu&eacute;s</span>
                     </div>
-                    <div class="ba-info">
+                    <div class="ba-info" style="text-align:center;padding:16px">
                         <h4 data-es="Lash Lifting + Tinte" data-en="Lash Lifting + Tint">Lash Lifting + Tinte</h4>
-                        <p data-es="Pesta&ntilde;as rizadas y elevadas de forma natural" data-en="Naturally curled and lifted lashes">Pesta&ntilde;as rizadas y elevadas de forma natural</p>
+                        <p data-es="Arrastra para ver la transformaci&oacute;n" data-en="Drag to see the transformation">Arrastra para ver la transformaci&oacute;n</p>
                     </div>
                 </div>
             </div>
@@ -1821,11 +2079,37 @@
         </div>
     </footer>
 
+    <!-- WHATSAPP POPUP -->
+    <div class="wa-popup" id="waPopup">
+        <div class="wa-popup-header">
+            <div class="wa-popup-avatar">
+                <svg width="24" height="24" viewBox="0 0 100 100">
+                    <path d="M15 75 Q15 35 30 20 L35 5 Q38 15 40 20 Q50 12 60 20 Q62 15 65 5 L70 20 Q85 35 85 75 Q85 95 50 95 Q15 95 15 75Z" fill="white"/>
+                </svg>
+            </div>
+            <div>
+                <div class="wa-popup-name">Moritas</div>
+                <div class="wa-popup-status" data-es="En l&iacute;nea | Responde r&aacute;pido" data-en="Online | Quick reply">En l&iacute;nea | Responde r&aacute;pido</div>
+            </div>
+            <button class="wa-popup-close" onclick="toggleWaPopup()">&times;</button>
+        </div>
+        <div class="wa-popup-body">
+            <div class="wa-popup-msg">
+                <span data-es="&iexcl;Hola! &#128140; Bienvenida a Moritas Estudio de Belleza. &iquest;En qu&eacute; podemos ayudarte?" data-en="Hi! &#128140; Welcome to Moritas Beauty Studio. How can we help you?">&iexcl;Hola! &#128140; Bienvenida a Moritas Estudio de Belleza. &iquest;En qu&eacute; podemos ayudarte?</span>
+                <span class="msg-time">11:30 AM</span>
+            </div>
+            <div class="wa-popup-options">
+                <a href="https://wa.me/573028386938?text=Hola%20Moritas%20%F0%9F%AB%90%20quiero%20agendar%20una%20cita" class="wa-popup-opt" target="_blank" data-es="&#128197; Agendar una cita" data-en="&#128197; Book an appointment">&#128197; Agendar una cita</a>
+                <a href="https://wa.me/573028386938?text=Hola%20Moritas%20%F0%9F%AB%90%20quiero%20saber%20los%20precios" class="wa-popup-opt" target="_blank" data-es="&#128176; Consultar precios" data-en="&#128176; Check pricing">&#128176; Consultar precios</a>
+                <a href="https://wa.me/573028386938?text=Hola%20Moritas%20%F0%9F%AB%90%20tengo%20una%20pregunta" class="wa-popup-opt" target="_blank" data-es="&#10067; Hacer una pregunta" data-en="&#10067; Ask a question">&#10067; Hacer una pregunta</a>
+            </div>
+        </div>
+    </div>
+
     <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/573028386938?text=Hola%20Moritas%20%F0%9F%AB%90%E2%9C%A8%20quiero%20m%C3%A1s%20informaci%C3%B3n" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <button class="whatsapp-float" id="waFloat" onclick="toggleWaPopup()" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <div class="whatsapp-tooltip" data-es="&#128140; Escr&iacute;benos por WhatsApp" data-en="&#128140; Message us on WhatsApp">&#128140; Escr&iacute;benos por WhatsApp</div>
-    </a>
+    </button>
 
     <!-- SCROLL TO TOP -->
     <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
@@ -2007,6 +2291,75 @@
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // ===== PRELOADER =====
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1800);
+        });
+
+        // ===== WHATSAPP POPUP =====
+        let waPopupOpen = false;
+        function toggleWaPopup() {
+            waPopupOpen = !waPopupOpen;
+            document.getElementById('waPopup').classList.toggle('active', waPopupOpen);
+        }
+
+        // Auto-show popup after 8 seconds
+        setTimeout(() => {
+            if (!waPopupOpen) {
+                waPopupOpen = true;
+                document.getElementById('waPopup').classList.add('active');
+            }
+        }, 8000);
+
+        // ===== BEFORE/AFTER SLIDER =====
+        document.querySelectorAll('[data-slider]').forEach(slider => {
+            let isDown = false;
+
+            function updateSlider(x) {
+                const rect = slider.getBoundingClientRect();
+                let pos = (x - rect.left) / rect.width;
+                pos = Math.max(0.05, Math.min(0.95, pos));
+                const pct = pos * 100;
+                slider.querySelector('.ba-slider-after').style.width = pct + '%';
+                slider.querySelector('.ba-slider-handle').style.left = pct + '%';
+                slider.querySelector('.ba-slider-handle-arrows').style.left = pct + '%';
+
+                // Fix after image width to match container
+                const afterImg = slider.querySelector('.ba-slider-after img');
+                afterImg.style.width = slider.offsetWidth + 'px';
+            }
+
+            slider.addEventListener('mousedown', (e) => { isDown = true; updateSlider(e.clientX); });
+            slider.addEventListener('mousemove', (e) => { if (isDown) updateSlider(e.clientX); });
+            document.addEventListener('mouseup', () => { isDown = false; });
+
+            slider.addEventListener('touchstart', (e) => { isDown = true; updateSlider(e.touches[0].clientX); }, {passive: true});
+            slider.addEventListener('touchmove', (e) => { if (isDown) updateSlider(e.touches[0].clientX); }, {passive: true});
+            document.addEventListener('touchend', () => { isDown = false; });
+
+            // Init after image width
+            window.addEventListener('load', () => {
+                const afterImg = slider.querySelector('.ba-slider-after img');
+                afterImg.style.width = slider.offsetWidth + 'px';
+            });
+            window.addEventListener('resize', () => {
+                const afterImg = slider.querySelector('.ba-slider-after img');
+                afterImg.style.width = slider.offsetWidth + 'px';
+            });
+        });
+
+        // ===== PARALLAX =====
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroShapes = document.querySelectorAll('.hero-shape');
+            heroShapes.forEach((shape, i) => {
+                const speed = 0.03 * (i + 1);
+                shape.style.transform = 'translateY(' + (scrolled * speed) + 'px)';
             });
         });
     </script>
