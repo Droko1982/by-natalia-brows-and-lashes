@@ -1056,6 +1056,30 @@
         .ba-info h4 { font-size: 1rem; margin-bottom: 4px; color: var(--text-primary); }
         .ba-info p { font-size: 0.82rem; color: var(--text-secondary); }
 
+        .ba-showcase {
+            display: grid; grid-template-columns: 1fr auto 1fr;
+            border-radius: var(--radius); overflow: hidden;
+            background: var(--bg-card); border: 1px solid var(--border);
+        }
+
+        .ba-showcase-item { overflow: hidden; }
+
+        .ba-showcase-item img {
+            width: 100%; height: 350px; object-fit: cover; display: block;
+        }
+
+        .ba-showcase-divider {
+            display: flex; align-items: center; justify-content: center;
+            background: var(--gradient-accent); width: 3px; position: relative;
+        }
+
+        .ba-showcase-divider span {
+            position: absolute; background: var(--gradient-accent); color: white;
+            padding: 8px 14px; border-radius: 20px; font-size: 0.7rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+            white-space: nowrap;
+        }
+
         .ba-video-pair {
             display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
             border-radius: var(--radius); overflow: hidden;
@@ -1478,6 +1502,7 @@
 
         @media (max-width: 640px) {
             .ba-slider-container img, .ba-slider-after { height: 250px; }
+            .ba-showcase-item img { height: 250px; }
             .ba-video-item video { height: 220px; }
         }
 
@@ -1960,21 +1985,22 @@
                         <p data-es="Arrastra para ver la transformaci&oacute;n" data-en="Drag to see the transformation">Arrastra para ver la transformaci&oacute;n</p>
                     </div>
                 </div>
-                <!-- Slider 2: Full Face Lash Transformation -->
+                <!-- Showcase 2: Full Face Lash Result - Two angles -->
                 <div class="animate-on-scroll delay-2">
-                    <div class="ba-slider-container" data-slider>
-                        <img src="images/ba-2-before.jpeg" alt="Antes extensiones volumen ruso Armenia" loading="lazy">
-                        <div class="ba-slider-after">
-                            <img src="images/ba-2-after.jpeg" alt="Despues extensiones volumen ruso Armenia Moritas" loading="lazy">
+                    <div class="ba-showcase">
+                        <div class="ba-showcase-item">
+                            <img src="images/ba-2-before.jpeg" alt="Resultado extensiones volumen ruso Armenia Moritas" loading="lazy">
                         </div>
-                        <div class="ba-slider-handle"></div>
-                        <div class="ba-slider-handle-arrows">&larr; &rarr;</div>
-                        <span class="ba-slider-label before-label" data-es="Antes" data-en="Before">Antes</span>
-                        <span class="ba-slider-label after-label" data-es="Despu&eacute;s" data-en="After">Despu&eacute;s</span>
+                        <div class="ba-showcase-divider">
+                            <span data-es="Resultado" data-en="Result">Resultado</span>
+                        </div>
+                        <div class="ba-showcase-item">
+                            <img src="images/ba-2-after.jpeg" alt="Resultado extensiones volumen ruso Armenia Moritas angulo 2" loading="lazy">
+                        </div>
                     </div>
                     <div class="ba-info" style="text-align:center;padding:16px">
                         <h4 data-es="Volumen Ruso" data-en="Russian Volume">Volumen Ruso</h4>
-                        <p data-es="Arrastra para ver la transformaci&oacute;n" data-en="Drag to see the transformation">Arrastra para ver la transformaci&oacute;n</p>
+                        <p data-es="Dos &aacute;ngulos del resultado" data-en="Two angles of the result">Dos &aacute;ngulos del resultado</p>
                     </div>
                 </div>
                 <!-- Video 1: Before/After -->
