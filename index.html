@@ -1252,11 +1252,12 @@
 
         .footer-bottom {
             border-top: 1px solid var(--border); padding-top: 24px;
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 16px;
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; gap: 10px;
         }
 
-        .footer-bottom p { font-size: 0.78rem; color: var(--text-secondary); }
+        .footer-bottom p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+        .footer-bottom p:first-child { max-width: 600px; }
 
         /* ============ WHATSAPP FLOAT ============ */
         .whatsapp-float {
@@ -1344,7 +1345,7 @@
             .trust-item span { font-size: 0.75rem; }
             .nav-controls .nav-toggle-btn { padding: 5px 10px; font-size: 0.7rem; }
             .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-            .footer-bottom { flex-direction: column; text-align: center; }
+            .footer-bottom { gap: 8px; }
             .cta-buttons { flex-direction: column; align-items: center; }
         }
 
@@ -2243,12 +2244,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Moritas Estudio de Belleza. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
-                <p>Armenia, Quind&iacute;o &mdash; Colombia</p>
-            </div>
-            <!-- Local SEO - Visible semantic content -->
-            <div class="footer-seo" style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border);font-size:0.75rem;color:var(--text-secondary);line-height:1.6;max-width:800px">
-                <p data-es="Moritas Estudio de Belleza &mdash; Centro especializado en cejas y pesta&ntilde;as en Armenia, Quind&iacute;o, Colombia. Microblading, extensiones de pesta&ntilde;as, lash lifting, laminado y dise&ntilde;o de cejas. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida, Salento, Filandia y todo el Eje Cafetero. Agenda tu cita: +57 302 838 6938." data-en="Moritas Beauty Studio &mdash; Specialized brow and lash center in Armenia, Quind&iacute;o, Colombia. Microblading, lash extensions, lash lifting, lamination and brow design. Serving clients from Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida, Salento, Filandia and the entire Coffee Region. Book now: +57 302 838 6938.">Moritas Estudio de Belleza &mdash; Centro especializado en cejas y pesta&ntilde;as en Armenia, Quind&iacute;o, Colombia. Microblading, extensiones de pesta&ntilde;as, lash lifting, laminado y dise&ntilde;o de cejas. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida, Salento, Filandia y todo el Eje Cafetero. Agenda tu cita: +57 302 838 6938.</p>
+                <p data-es="Moritas Estudio de Belleza &mdash; Cejas y pesta&ntilde;as en Armenia, Quind&iacute;o. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida, Salento, Filandia y todo el Eje Cafetero." data-en="Moritas Beauty Studio &mdash; Brows and lashes in Armenia, Quind&iacute;o. Serving clients from Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida, Salento, Filandia and the entire Coffee Region.">Moritas Estudio de Belleza &mdash; Cejas y pesta&ntilde;as en Armenia, Quind&iacute;o. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida, Salento, Filandia y todo el Eje Cafetero.</p>
+                <p>&copy; 2026 Moritas Estudio de Belleza. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span> &mdash; Armenia, Quind&iacute;o, Colombia</p>
             </div>
         </div>
     </footer>
