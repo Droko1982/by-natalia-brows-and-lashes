@@ -1,0 +1,14 @@
+{
+  "name": "Moritas Cejas y Pestañas",
+  "short_name": "Moritas",
+  "description": "Extensiones de pestañas, lash lifting, laminado y diseño de cejas en Armenia, Quindío.",
+  "lang": "es-CO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFBFE",
+  "theme_color": "#723A62",
+  "icons": [
+    {"src": "/images/brand/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/images/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
