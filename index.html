@@ -2099,11 +2099,11 @@
                 <div class="animate-on-scroll delay-3">
                     <div class="ba-video-pair">
                         <div class="ba-video-item">
-                            <video src="images/ba-3-before.mp4#t=0.1" loop muted playsinline preload="metadata"></video>
+                            <video src="images/ba-3-before.mp4#t=0.1" loop muted playsinline preload="none"></video>
                             <span class="ba-video-label" data-es="Antes" data-en="Before">Antes</span>
                         </div>
                         <div class="ba-video-item">
-                            <video src="images/ba-3-after.mp4#t=0.1" loop muted playsinline preload="metadata"></video>
+                            <video src="images/ba-3-after.mp4#t=0.1" loop muted playsinline preload="none"></video>
                             <span class="ba-video-label" data-es="Despu&eacute;s" data-en="After">Despu&eacute;s</span>
                         </div>
                     </div>
@@ -2116,11 +2116,11 @@
                 <div class="animate-on-scroll delay-4">
                     <div class="ba-video-pair">
                         <div class="ba-video-item">
-                            <video src="images/ba-4-before.mp4#t=0.1" loop muted playsinline preload="metadata"></video>
+                            <video src="images/ba-4-before.mp4#t=0.1" loop muted playsinline preload="none"></video>
                             <span class="ba-video-label" data-es="Antes" data-en="Before">Antes</span>
                         </div>
                         <div class="ba-video-item">
-                            <video src="images/ba-4-after.mp4#t=0.1" loop muted playsinline preload="metadata"></video>
+                            <video src="images/ba-4-after.mp4#t=0.1" loop muted playsinline preload="none"></video>
                             <span class="ba-video-label" data-es="Despu&eacute;s" data-en="After">Despu&eacute;s</span>
                         </div>
                     </div>
@@ -2737,6 +2737,18 @@
         });
 
         // ===== LAZY VIDEO PLAYBACK =====
+        // Fetch a first frame only when the visitor scrolls near the before/after videos (saves mobile data)
+        const videoWarmup = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.preload = 'metadata';
+                entry.target.load();
+                obs.unobserve(entry.target);
+            });
+        }, { rootMargin: '600px 0px' });
+
+        document.querySelectorAll('.ba-video-item video').forEach(v => videoWarmup.observe(v));
+
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const video = entry.target;
