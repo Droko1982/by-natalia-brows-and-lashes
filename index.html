@@ -451,17 +451,6 @@
         img { max-width: 100%; height: auto; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        /* ============ PARTICLES ============ */
-        #particles-canvas {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.4;
-        }
-
-        [data-theme="dark"] #particles-canvas { opacity: 0.25; }
 
         /* ============ NAVBAR ============ */
         .navbar {
@@ -1689,6 +1678,121 @@
         @media (max-width: 968px) {
             .parallax-section { background-attachment: scroll; }
         }
+        /* ============ COMPACT, PROFESSIONAL LAYOUT ============ */
+        section { padding: 80px 0; }
+        .hero { min-height: auto; padding: 136px 0 76px; }
+        .section-header { margin-bottom: 44px; }
+        .section-title { font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+        .nav-links { gap: 24px; }
+        #themeText { display: none; }
+        .nav-cta { padding: 11px 22px; font-size: 0.82rem; margin-left: 4px; }
+        .pricing { background: var(--bg-secondary); }
+        .testimonials { background: var(--bg-primary); }
+        .instagram-section { background: var(--bg-secondary); }
+        .gallery-grid { grid-template-columns: repeat(5, 1fr); gap: 14px; }
+        .gallery-item, .gallery-item:nth-child(1) { aspect-ratio: 3 / 4; grid-row: auto; border-radius: 16px; }
+        .instagram-cta { margin-top: 28px; }
+        .testimonial-card { padding: 30px; }
+        .pricing-card { padding: 34px 28px; }
+        .ba-info { padding: 12px 16px; }
+
+        .google-reviews {
+            margin-top: 32px; display: flex; align-items: center; justify-content: space-between;
+            gap: 20px; flex-wrap: wrap; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 22px 28px; box-shadow: var(--shadow-card);
+        }
+        .gr-score { display: flex; align-items: center; gap: 14px; }
+        .gr-number { font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: var(--text-primary); line-height: 1; }
+        .gr-stars { color: var(--star); letter-spacing: 2px; font-size: 1rem; }
+        .gr-label { font-size: 0.84rem; color: var(--text-secondary); }
+        .gr-label strong { color: var(--text-primary); }
+        .gr-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+        .gr-actions .btn { padding: 12px 24px; font-size: 0.84rem; }
+        .gr-actions .icon { width: 16px; height: 16px; }
+
+        footer { padding: 44px 0 20px; }
+        .footer-grid { gap: 32px; margin-bottom: 24px; }
+        .footer-logo { height: 58px; margin-bottom: 10px; }
+        .footer-brand p { font-size: 0.82rem; line-height: 1.6; }
+        .footer-social { margin-top: 12px; }
+        .social-link { width: 34px; height: 34px; }
+        .footer-links h4 { margin-bottom: 12px; font-size: 0.72rem; }
+        .footer-links li { margin-bottom: 6px; }
+        .footer-links a { font-size: 0.84rem; }
+        .footer-bottom {
+            padding-top: 16px; gap: 8px 24px; flex-direction: row; flex-wrap: wrap;
+            justify-content: space-between; text-align: left;
+        }
+        .footer-bottom p { font-size: 0.76rem; }
+        .footer-legal-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.76rem; }
+        .footer-legal-links a { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 3px; }
+        .footer-legal-links a:hover { color: var(--text-accent); }
+
+        .wa-popup { z-index: 1002; bottom: 104px; width: 330px; max-height: calc(100vh - 210px); overflow-y: auto; }
+        .wa-popup-header { padding: 14px 18px; position: sticky; top: 0; z-index: 1; }
+        .wa-popup-body { padding: 16px; }
+        .wa-popup-msg { padding: 12px 14px; margin-bottom: 12px; font-size: 0.84rem; }
+        .wa-popup-options { gap: 6px; }
+        .wa-popup-opt { padding: 9px 14px; }
+        body.wa-open .scroll-top { opacity: 0; pointer-events: none; }
+        .sticky-cta a { flex-wrap: wrap; column-gap: 8px; row-gap: 0; }
+        .sticky-cta .urgency-text { flex-basis: 100%; margin-top: 0; font-size: 0.7rem; }
+        @media (min-width: 969px) { .footer-bottom { padding-right: 84px; } }
+
+        .cta { padding: 68px 0; }
+        .about-image-placeholder { max-height: 560px; }
+        @media (min-width: 969px) {
+            .faq-grid { max-width: 1120px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; align-items: start; }
+        }
+
+        @media (min-width: 1100px) {
+            .ba-grid { grid-template-columns: repeat(4, 1fr); max-width: none; gap: 20px; }
+            .ba-slider-container img, .ba-showcase-item img, .ba-video-item video { height: 320px; }
+        }
+
+        @media (max-width: 968px) {
+            .nav-cta { display: none; }
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            section { padding: 56px 0; }
+            .hero { padding: 116px 0 56px; }
+            .hero-visual { width: min(290px, 76%); }
+            .section-header { margin-bottom: 28px; }
+            .mobile-scroller {
+                display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px;
+                margin: 0 -24px; padding: 4px 24px 16px; scroll-padding: 0 24px; max-width: none;
+                scrollbar-width: none; -webkit-overflow-scrolling: touch;
+            }
+            .mobile-scroller::-webkit-scrollbar { display: none; }
+            .mobile-scroller > * { flex: 0 0 84%; scroll-snap-align: start; }
+            .gallery-grid.mobile-scroller > * { flex-basis: 60%; }
+            .services-grid { gap: 14px; }
+            .service-card {
+                display: grid; grid-template-columns: 108px 1fr; column-gap: 14px;
+                padding: 14px; text-align: left; align-items: start;
+            }
+            .service-card > * { grid-column: 2; }
+            .service-card .service-img {
+                grid-column: 1; grid-row: 1 / span 5; width: 108px; height: 100%; min-height: 168px;
+                margin: 0; border-radius: 12px;
+            }
+            .service-card h3 { font-size: 1.05rem; margin: 2px 0 6px; }
+            .service-card p { font-size: 0.8rem; line-height: 1.55; margin-bottom: 8px; }
+            .service-price { justify-self: start; padding: 4px 12px; font-size: 0.74rem; }
+            .service-link { margin-top: 6px; }
+            .pricing-card { padding: 26px 20px; }
+            .testimonial-card { padding: 24px; }
+            .google-reviews { padding: 18px; flex-direction: column; align-items: stretch; }
+            .gr-actions .btn { flex: 1; justify-content: center; }
+            .ba-slider-container img, .ba-slider-after, .ba-showcase-item img, .ba-video-item video { height: 300px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 22px 16px; }
+            .footer-brand { grid-column: 1 / -1; }
+            .footer-bottom { flex-direction: column; text-align: center; align-items: center; }
+            footer { padding-bottom: 96px; }
+            .wa-popup { width: calc(100vw - 32px); right: 16px; bottom: 146px; max-height: calc(100vh - 250px); }
+        }
     </style>
 </head>
 <body>
@@ -1706,9 +1810,6 @@
         <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.6L19.5 10.5 13.9 12.4 12 18l-1.9-5.6L4.5 10.5l5.6-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
     </svg>
 
-    <!-- Particles -->
-    <canvas id="particles-canvas"></canvas>
-
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -1717,23 +1818,23 @@
                 <img src="images/brand/moritas-logo-light.webp" alt="" class="nav-logo-img logo-dark" width="480" height="114" loading="lazy">
             </a>
             <ul class="nav-links">
-                <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
                 <li><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
-                <li><a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a></li>
-                <li><a href="#sobre-mi" data-es="Sobre M&iacute;" data-en="About">Sobre M&iacute;</a></li>
-                <li><a href="#galeria" data-es="Instagram" data-en="Instagram">Instagram</a></li>
+                <li><a href="#resultados" data-es="Resultados" data-en="Results">Resultados</a></li>
                 <li><a href="#precios" data-es="Precios" data-en="Pricing">Precios</a></li>
-                <li><a href="#faq" data-es="FAQ" data-en="FAQ">FAQ</a></li>
+                <li><a href="#testimonios" data-es="Opiniones" data-en="Reviews">Opiniones</a></li>
+                <li><a href="#sobre-mi" data-es="Nosotras" data-en="About">Nosotras</a></li>
+                <li><a href="#ubicacion" data-es="Contacto" data-en="Contact">Contacto</a></li>
             </ul>
             <div class="nav-controls">
                 <button class="nav-toggle-btn" id="langToggle" onclick="toggleLanguage()">
                     <span id="langIcon">&#127466;&#127480;</span>
                     <span id="langText">EN</span>
                 </button>
-                <button class="nav-toggle-btn" id="themeToggle" onclick="toggleTheme()">
+                <button class="nav-toggle-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Cambiar modo claro u oscuro">
                     <span id="themeIcon">&#9790;</span>
                     <span id="themeText" data-es="Oscuro" data-en="Dark">Oscuro</span>
                 </button>
+                <a href="https://wa.me/573028386938?text=Hola%20Moritas%20%F0%9F%AB%90%E2%9C%A8%20quiero%20agendar%20una%20cita" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer" data-es="Agendar" data-en="Book">Agendar</a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Abrir men&uacute;">
                     <span></span><span></span><span></span>
                 </button>
@@ -1743,13 +1844,14 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#inicio" onclick="closeMobileMenu()" data-es="Inicio" data-en="Home">Inicio</a>
         <a href="#servicios" onclick="closeMobileMenu()" data-es="Servicios" data-en="Services">Servicios</a>
-        <a href="#proceso" onclick="closeMobileMenu()" data-es="Proceso" data-en="Process">Proceso</a>
-        <a href="#sobre-mi" onclick="closeMobileMenu()" data-es="Sobre M&iacute;" data-en="About">Sobre M&iacute;</a>
-        <a href="#galeria" onclick="closeMobileMenu()" data-es="Instagram" data-en="Instagram">Instagram</a>
+        <a href="#resultados" onclick="closeMobileMenu()" data-es="Resultados" data-en="Results">Resultados</a>
         <a href="#precios" onclick="closeMobileMenu()" data-es="Precios" data-en="Pricing">Precios</a>
-        <a href="#faq" onclick="closeMobileMenu()" data-es="FAQ" data-en="FAQ">FAQ</a>
+        <a href="#testimonios" onclick="closeMobileMenu()" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a href="#sobre-mi" onclick="closeMobileMenu()" data-es="Nosotras" data-en="About">Nosotras</a>
+        <a href="#guias" onclick="closeMobileMenu()" data-es="Gu&iacute;as" data-en="Guides">Gu&iacute;as</a>
+        <a href="#faq" onclick="closeMobileMenu()" data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</a>
+        <a href="#ubicacion" onclick="closeMobileMenu()" data-es="Contacto" data-en="Contact">Contacto</a>
         <div class="mobile-controls">
             <button class="nav-toggle-btn" onclick="toggleLanguage()" aria-label="Cambiar idioma"><span id="langIconMobile">&#127466;&#127480;</span> <span id="langTextMobile">EN</span></button>
             <button class="nav-toggle-btn" onclick="toggleTheme()" aria-label="Cambiar tema"><span id="themeIconMobile">&#9790;</span></button>
@@ -1897,160 +1999,6 @@
         </div>
     </section>
 
-    <!-- PROCESS -->
-    <section class="process" id="proceso">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-tag" data-es="C&oacute;mo Funciona" data-en="How It Works">C&oacute;mo Funciona</div>
-                <h2 class="section-title" data-es="Tu Experiencia con Nosotras" data-en="Your Experience With Us">Tu Experiencia con Nosotras</h2>
-                <p class="section-subtitle" data-es="Un proceso cuidadoso y profesional para resultados perfectos." data-en="A careful, professional process for perfect results.">Un proceso cuidadoso y profesional para resultados perfectos.</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step animate-on-scroll delay-1">
-                    <div class="step-number">1</div>
-                    <h4 data-es="Consulta" data-en="Consultation">Consulta</h4>
-                    <p data-es="Analizamos tu rostro, estilo y expectativas para dise&ntilde;ar el look perfecto para ti." data-en="We analyze your face, style and expectations to design the perfect look for you.">Analizamos tu rostro, estilo y expectativas para dise&ntilde;ar el look perfecto para ti.</p>
-                </div>
-                <div class="process-step animate-on-scroll delay-2">
-                    <div class="step-number">2</div>
-                    <h4 data-es="Dise&ntilde;o" data-en="Design">Dise&ntilde;o</h4>
-                    <p data-es="Creamos un dise&ntilde;o personalizado basado en visagismo y proporci&oacute;n &aacute;urea facial." data-en="We create a custom design based on face morphology and golden ratio proportions.">Creamos un dise&ntilde;o personalizado basado en visagismo y proporci&oacute;n &aacute;urea facial.</p>
-                </div>
-                <div class="process-step animate-on-scroll delay-3">
-                    <div class="step-number">3</div>
-                    <h4 data-es="Procedimiento" data-en="Procedure">Procedimiento</h4>
-                    <p data-es="Realizamos el servicio con productos premium, t&eacute;cnica profesional y protocolos de bioseguridad." data-en="We perform the service with premium products, professional technique and biosafety protocols.">Realizamos el servicio con productos premium, t&eacute;cnica profesional y protocolos de bioseguridad.</p>
-                </div>
-                <div class="process-step animate-on-scroll delay-4">
-                    <div class="step-number">4</div>
-                    <h4 data-es="Cuidado" data-en="Aftercare">Cuidado</h4>
-                    <p data-es="Te damos instrucciones de cuidado post-procedimiento y seguimiento para resultados duraderos." data-en="We provide post-procedure care instructions and follow-up for lasting results.">Te damos instrucciones de cuidado post-procedimiento y seguimiento para resultados duraderos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="sobre-mi">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image animate-on-scroll">
-                    <div class="about-image-placeholder">
-                        <img src="images/about.webp" srcset="images/about-480.webp 480w, images/about.webp 864w" sizes="(max-width: 968px) 92vw, 540px" alt="Moritas Estudio de Belleza Armenia Quindio - Cejas y Pestanas" width="864" height="1184" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1;">
-                    </div>
-                    <img class="about-seal" src="images/brand/moritas-sello-240.webp" alt="Sello Moritas Cejas y Pesta&ntilde;as" width="240" height="240" loading="lazy">
-                    <div class="about-float-card">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label" data-es="Procedimientos" data-en="Procedures">Procedimientos</div>
-                    </div>
-                </div>
-                <div class="about-content animate-on-scroll">
-                    <div class="section-tag" data-es="Sobre Nosotras" data-en="About Us">Sobre Nosotras</div>
-                    <h2><span data-es="Somos" data-en="We are">Somos</span> <em>Moritas</em></h2>
-                    <p data-es="Moritas Estudio de Belleza naci&oacute; en Armenia, Quind&iacute;o con una misi&oacute;n: realzar la belleza natural de cada mujer con t&eacute;cnicas de &uacute;ltima generaci&oacute;n y productos premium." data-en="Moritas Beauty Studio was born in Armenia, Quind&iacute;o with a mission: to enhance the natural beauty of every woman with cutting-edge techniques and premium products.">Moritas Estudio de Belleza naci&oacute; en Armenia, Quind&iacute;o con una misi&oacute;n: realzar la belleza natural de cada mujer con t&eacute;cnicas de &uacute;ltima generaci&oacute;n y productos premium.</p>
-                    <p data-es="Cada procedimiento lo realizamos con dedicaci&oacute;n y amor, cuidando cada detalle para que salgas con la mirada que siempre so&ntilde;aste. Tu satisfacci&oacute;n es nuestra mejor publicidad." data-en="Every procedure is performed with dedication and love, taking care of every detail so you leave with the look you've always dreamed of. Your satisfaction is our best advertising.">Cada procedimiento lo realizamos con dedicaci&oacute;n y amor, cuidando cada detalle para que salgas con la mirada que siempre so&ntilde;aste. Tu satisfacci&oacute;n es nuestra mejor publicidad.</p>
-                    <ul class="about-features">
-                        <li><span class="feature-check">&#10003;</span> <span data-es="T&eacute;cnicas certificadas y actualizadas" data-en="Certified and up-to-date techniques">T&eacute;cnicas certificadas y actualizadas</span></li>
-                        <li><span class="feature-check">&#10003;</span> <span data-es="Productos premium importados" data-en="Premium imported products">Productos premium importados</span></li>
-                        <li><span class="feature-check">&#10003;</span> <span data-es="Ambiente higi&eacute;nico y profesional" data-en="Hygienic and professional environment">Ambiente higi&eacute;nico y profesional</span></li>
-                        <li><span class="feature-check">&#10003;</span> <span data-es="Atenci&oacute;n 100% personalizada" data-en="100% personalized attention">Atenci&oacute;n 100% personalizada</span></li>
-                        <li><span class="feature-check">&#10003;</span> <span data-es="Protocolos de bioseguridad" data-en="Biosecurity protocols">Protocolos de bioseguridad</span></li>
-                    </ul>
-                    <a href="https://wa.me/573028386938?text=Hola%20Moritas%20%F0%9F%AB%90%E2%9C%A8%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                        <span data-es="Escr&iacute;benos por WhatsApp" data-en="Message Us on WhatsApp">Escr&iacute;benos por WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INSTAGRAM / GALLERY -->
-    <section class="instagram-section" id="galeria">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-tag" data-es="Nuestro Trabajo" data-en="Our Work">Nuestro Trabajo</div>
-                <h2 class="section-title" data-es="S&iacute;guenos en Instagram" data-en="Follow Us on Instagram">S&iacute;guenos en Instagram</h2>
-                <div class="instagram-handle">
-                    <div class="ig-icon">IG</div>
-                    @moritas_beauty_studio
-                </div>
-            </div>
-            <div class="gallery-grid animate-on-scroll">
-                <div class="gallery-item">
-                    <img src="images/gallery-1.webp" srcset="images/gallery-1-480.webp 480w, images/gallery-1.webp 738w" sizes="(max-width: 640px) 92vw, 440px" alt="Laminado de cejas en Armenia Quindio - Moritas Estudio de Belleza" width="738" height="1304" loading="lazy">
-                    <div class="gallery-item-overlay"><span data-es="Laminado de Cejas" data-en="Brow Lamination">Laminado de Cejas</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery-2.webp" srcset="images/gallery-2-480.webp 480w, images/gallery-2.webp 738w" sizes="(max-width: 640px) 92vw, 440px" alt="Extensiones de pestanas volumen tecnol&oacute;gico Armenia - Moritas Beauty Studio" width="738" height="1304" loading="lazy">
-                    <div class="gallery-item-overlay"><span data-es="Extensiones Volumen" data-en="Volume Extensions">Extensiones Volumen</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery-3.webp" srcset="images/gallery-3-480.webp 480w, images/gallery-3.webp 900w" sizes="(max-width: 640px) 92vw, 440px" alt="Lash Lifting pestanas Armenia Quindio - Moritas Estudio" width="900" height="1125" loading="lazy">
-                    <div class="gallery-item-overlay"><span>Lash Lifting</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery-4.webp" srcset="images/gallery-4-480.webp 480w, images/gallery-4.webp 900w" sizes="(max-width: 640px) 92vw, 440px" alt="Diseno de cejas profesional Armenia - Moritas Beauty Studio" width="900" height="1200" loading="lazy">
-                    <div class="gallery-item-overlay"><span data-es="Dise&ntilde;o de Cejas" data-en="Brow Design">Dise&ntilde;o de Cejas</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery-5.webp" srcset="images/gallery-5-480.webp 480w, images/gallery-5.webp 738w" sizes="(max-width: 640px) 92vw, 440px" alt="Pestanas volumen tecnologico Armenia Quindio - Moritas Estudio de Belleza" width="738" height="1304" loading="lazy">
-                    <div class="gallery-item-overlay"><span data-es="Volumen Tecnol&oacute;gico" data-en="Tech Volume">Volumen Tecnol&oacute;gico</span></div>
-                </div>
-            </div>
-            <div class="instagram-cta animate-on-scroll">
-                <a href="https://www.instagram.com/moritas_beauty_studio" class="btn btn-instagram" target="_blank" rel="noopener noreferrer">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    <span data-es="Ver M&aacute;s en Instagram" data-en="See More on Instagram">Ver M&aacute;s en Instagram</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="testimonials" id="testimonios">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <div class="section-tag" data-es="Testimonios" data-en="Testimonials">Testimonios</div>
-                <h2 class="section-title" data-es="Lo Que Dicen Nuestras Clientas" data-en="What Our Clients Say">Lo Que Dicen Nuestras Clientas</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card animate-on-scroll delay-1">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="testimonial-text" data-es="Moritas es incre&iacute;ble. Me hicieron un laminado y dise&ntilde;o de cejas que se ve completamente natural. Todas me preguntan d&oacute;nde me hice las cejas. 100% recomendadas." data-en="Moritas is incredible. They did my brow lamination and design and it looks completely natural. Everyone asks where I got my brows done. 100% recommended.">Moritas es incre&iacute;ble. Me hicieron un laminado y dise&ntilde;o de cejas que se ve completamente natural. Todas me preguntan d&oacute;nde me hice las cejas. 100% recomendadas.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">CM</div>
-                        <div>
-                            <div class="testimonial-name">Carolina M.</div>
-                            <div class="testimonial-location">Armenia, Quind&iacute;o</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card animate-on-scroll delay-2">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="testimonial-text" data-es="Las extensiones quedaron perfectas, se ven s&uacute;per naturales y me ahorro mucho tiempo en maquillaje. El estudio es muy profesional y limpio." data-en="The extensions came out perfect, they look super natural and I save so much time on makeup. The studio is very professional and clean.">Las extensiones quedaron perfectas, se ven s&uacute;per naturales y me ahorro mucho tiempo en maquillaje. El estudio es muy profesional y limpio.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">VP</div>
-                        <div>
-                            <div class="testimonial-name">Valentina P.</div>
-                            <div class="testimonial-location">Armenia, Quind&iacute;o</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card animate-on-scroll delay-3">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="testimonial-text" data-es="El lash lifting fue una revelaci&oacute;n. Mis pesta&ntilde;as se ven largas y rizadas sin extensiones. Vuelvo cada 6 semanas. &iexcl;Las amo!" data-en="The lash lifting was a revelation. My lashes look long and curled without extensions. I come back every 6 weeks. Love them!">El lash lifting fue una revelaci&oacute;n. Mis pesta&ntilde;as se ven largas y rizadas sin extensiones. Vuelvo cada 6 semanas. &iexcl;Las amo!</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">LR</div>
-                        <div>
-                            <div class="testimonial-name">Laura R.</div>
-                            <div class="testimonial-location">Calarc&aacute;, Quind&iacute;o</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- BEFORE & AFTER -->
     <section class="before-after" id="resultados">
         <div class="container">
@@ -2059,7 +2007,7 @@
                 <h2 class="section-title" data-es="Antes y Despu&eacute;s" data-en="Before &amp; After">Antes y Despu&eacute;s</h2>
                 <p class="section-subtitle" data-es="Transformaciones reales que hablan por s&iacute; mismas. Cada resultado refleja nuestro compromiso con la excelencia." data-en="Real transformations that speak for themselves. Each result reflects our commitment to excellence.">Transformaciones reales que hablan por s&iacute; mismas. Cada resultado refleja nuestro compromiso con la excelencia.</p>
             </div>
-            <div class="ba-grid">
+            <div class="mobile-scroller ba-grid">
                 <!-- Slider 1: Lash Extensions Close-up -->
                 <div class="animate-on-scroll delay-1">
                     <div class="ba-slider-container" data-slider>
@@ -2199,6 +2147,173 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag" data-es="Testimonios" data-en="Testimonials">Testimonios</div>
+                <h2 class="section-title" data-es="Lo Que Dicen Nuestras Clientas" data-en="What Our Clients Say">Lo Que Dicen Nuestras Clientas</h2>
+            </div>
+            <div class="mobile-scroller testimonials-grid">
+                <div class="testimonial-card animate-on-scroll delay-1">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text" data-es="Moritas es incre&iacute;ble. Me hicieron un laminado y dise&ntilde;o de cejas que se ve completamente natural. Todas me preguntan d&oacute;nde me hice las cejas. 100% recomendadas." data-en="Moritas is incredible. They did my brow lamination and design and it looks completely natural. Everyone asks where I got my brows done. 100% recommended.">Moritas es incre&iacute;ble. Me hicieron un laminado y dise&ntilde;o de cejas que se ve completamente natural. Todas me preguntan d&oacute;nde me hice las cejas. 100% recomendadas.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">CM</div>
+                        <div>
+                            <div class="testimonial-name">Carolina M.</div>
+                            <div class="testimonial-location">Armenia, Quind&iacute;o</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll delay-2">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text" data-es="Las extensiones quedaron perfectas, se ven s&uacute;per naturales y me ahorro mucho tiempo en maquillaje. El estudio es muy profesional y limpio." data-en="The extensions came out perfect, they look super natural and I save so much time on makeup. The studio is very professional and clean.">Las extensiones quedaron perfectas, se ven s&uacute;per naturales y me ahorro mucho tiempo en maquillaje. El estudio es muy profesional y limpio.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">VP</div>
+                        <div>
+                            <div class="testimonial-name">Valentina P.</div>
+                            <div class="testimonial-location">Armenia, Quind&iacute;o</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll delay-3">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text" data-es="El lash lifting fue una revelaci&oacute;n. Mis pesta&ntilde;as se ven largas y rizadas sin extensiones. Vuelvo cada 6 semanas. &iexcl;Las amo!" data-en="The lash lifting was a revelation. My lashes look long and curled without extensions. I come back every 6 weeks. Love them!">El lash lifting fue una revelaci&oacute;n. Mis pesta&ntilde;as se ven largas y rizadas sin extensiones. Vuelvo cada 6 semanas. &iexcl;Las amo!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LR</div>
+                        <div>
+                            <div class="testimonial-name">Laura R.</div>
+                            <div class="testimonial-location">Calarc&aacute;, Quind&iacute;o</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="google-reviews animate-on-scroll">
+                <div class="gr-score">
+                    <div class="gr-number">5.0</div>
+                    <div>
+                        <div class="gr-stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="gr-label" data-es="Calificaci&oacute;n de nuestras clientas en &lt;strong&gt;Google&lt;/strong&gt;" data-en="Our clients' rating on &lt;strong&gt;Google&lt;/strong&gt;">Calificaci&oacute;n de nuestras clientas en <strong>Google</strong></div>
+                    </div>
+                </div>
+                <div class="gr-actions">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Moritas%20Cejas%20y%20Pesta%C3%B1as%20Armenia%20Quind%C3%ADo" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-es="Ver rese&ntilde;as" data-en="See reviews">Ver rese&ntilde;as</a>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Moritas%20Cejas%20y%20Pesta%C3%B1as%20Armenia%20Quind%C3%ADo" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-star"/></svg><span data-es="D&eacute;janos tu rese&ntilde;a" data-en="Leave us a review">D&eacute;janos tu rese&ntilde;a</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image animate-on-scroll">
+                    <div class="about-image-placeholder">
+                        <img src="images/about.webp" srcset="images/about-480.webp 480w, images/about.webp 864w" sizes="(max-width: 968px) 92vw, 540px" alt="Moritas Estudio de Belleza Armenia Quindio - Cejas y Pestanas" width="864" height="1184" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1;">
+                    </div>
+                    <img class="about-seal" src="images/brand/moritas-sello-240.webp" alt="Sello Moritas Cejas y Pesta&ntilde;as" width="240" height="240" loading="lazy">
+                    <div class="about-float-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label" data-es="Procedimientos" data-en="Procedures">Procedimientos</div>
+                    </div>
+                </div>
+                <div class="about-content animate-on-scroll">
+                    <div class="section-tag" data-es="Sobre Nosotras" data-en="About Us">Sobre Nosotras</div>
+                    <h2><span data-es="Somos" data-en="We are">Somos</span> <em>Moritas</em></h2>
+                    <p data-es="Moritas Estudio de Belleza naci&oacute; en Armenia, Quind&iacute;o con una misi&oacute;n: realzar la belleza natural de cada mujer con t&eacute;cnicas de &uacute;ltima generaci&oacute;n y productos premium." data-en="Moritas Beauty Studio was born in Armenia, Quind&iacute;o with a mission: to enhance the natural beauty of every woman with cutting-edge techniques and premium products.">Moritas Estudio de Belleza naci&oacute; en Armenia, Quind&iacute;o con una misi&oacute;n: realzar la belleza natural de cada mujer con t&eacute;cnicas de &uacute;ltima generaci&oacute;n y productos premium.</p>
+                    <p data-es="Cada procedimiento lo realizamos con dedicaci&oacute;n y amor, cuidando cada detalle para que salgas con la mirada que siempre so&ntilde;aste. Tu satisfacci&oacute;n es nuestra mejor publicidad." data-en="Every procedure is performed with dedication and love, taking care of every detail so you leave with the look you've always dreamed of. Your satisfaction is our best advertising.">Cada procedimiento lo realizamos con dedicaci&oacute;n y amor, cuidando cada detalle para que salgas con la mirada que siempre so&ntilde;aste. Tu satisfacci&oacute;n es nuestra mejor publicidad.</p>
+                    <ul class="about-features">
+                        <li><span class="feature-check">&#10003;</span> <span data-es="T&eacute;cnicas certificadas y actualizadas" data-en="Certified and up-to-date techniques">T&eacute;cnicas certificadas y actualizadas</span></li>
+                        <li><span class="feature-check">&#10003;</span> <span data-es="Productos premium importados" data-en="Premium imported products">Productos premium importados</span></li>
+                        <li><span class="feature-check">&#10003;</span> <span data-es="Ambiente higi&eacute;nico y profesional" data-en="Hygienic and professional environment">Ambiente higi&eacute;nico y profesional</span></li>
+                        <li><span class="feature-check">&#10003;</span> <span data-es="Atenci&oacute;n 100% personalizada" data-en="100% personalized attention">Atenci&oacute;n 100% personalizada</span></li>
+                        <li><span class="feature-check">&#10003;</span> <span data-es="Protocolos de bioseguridad" data-en="Biosecurity protocols">Protocolos de bioseguridad</span></li>
+                    </ul>
+                    <a href="https://wa.me/573028386938?text=Hola%20Moritas%20%F0%9F%AB%90%E2%9C%A8%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20servicios" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <span data-es="Escr&iacute;benos por WhatsApp" data-en="Message Us on WhatsApp">Escr&iacute;benos por WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag" data-es="C&oacute;mo Funciona" data-en="How It Works">C&oacute;mo Funciona</div>
+                <h2 class="section-title" data-es="Tu Experiencia con Nosotras" data-en="Your Experience With Us">Tu Experiencia con Nosotras</h2>
+                <p class="section-subtitle" data-es="Un proceso cuidadoso y profesional para resultados perfectos." data-en="A careful, professional process for perfect results.">Un proceso cuidadoso y profesional para resultados perfectos.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step animate-on-scroll delay-1">
+                    <div class="step-number">1</div>
+                    <h4 data-es="Consulta" data-en="Consultation">Consulta</h4>
+                    <p data-es="Analizamos tu rostro, estilo y expectativas para dise&ntilde;ar el look perfecto para ti." data-en="We analyze your face, style and expectations to design the perfect look for you.">Analizamos tu rostro, estilo y expectativas para dise&ntilde;ar el look perfecto para ti.</p>
+                </div>
+                <div class="process-step animate-on-scroll delay-2">
+                    <div class="step-number">2</div>
+                    <h4 data-es="Dise&ntilde;o" data-en="Design">Dise&ntilde;o</h4>
+                    <p data-es="Creamos un dise&ntilde;o personalizado basado en visagismo y proporci&oacute;n &aacute;urea facial." data-en="We create a custom design based on face morphology and golden ratio proportions.">Creamos un dise&ntilde;o personalizado basado en visagismo y proporci&oacute;n &aacute;urea facial.</p>
+                </div>
+                <div class="process-step animate-on-scroll delay-3">
+                    <div class="step-number">3</div>
+                    <h4 data-es="Procedimiento" data-en="Procedure">Procedimiento</h4>
+                    <p data-es="Realizamos el servicio con productos premium, t&eacute;cnica profesional y protocolos de bioseguridad." data-en="We perform the service with premium products, professional technique and biosafety protocols.">Realizamos el servicio con productos premium, t&eacute;cnica profesional y protocolos de bioseguridad.</p>
+                </div>
+                <div class="process-step animate-on-scroll delay-4">
+                    <div class="step-number">4</div>
+                    <h4 data-es="Cuidado" data-en="Aftercare">Cuidado</h4>
+                    <p data-es="Te damos instrucciones de cuidado post-procedimiento y seguimiento para resultados duraderos." data-en="We provide post-procedure care instructions and follow-up for lasting results.">Te damos instrucciones de cuidado post-procedimiento y seguimiento para resultados duraderos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM / GALLERY -->
+    <section class="instagram-section" id="galeria">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag" data-es="Nuestro Trabajo" data-en="Our Work">Nuestro Trabajo</div>
+                <h2 class="section-title" data-es="S&iacute;guenos en Instagram" data-en="Follow Us on Instagram">S&iacute;guenos en Instagram</h2>
+                <div class="instagram-handle">
+                    <div class="ig-icon">IG</div>
+                    @moritas_beauty_studio
+                </div>
+            </div>
+            <div class="mobile-scroller gallery-grid animate-on-scroll">
+                <div class="gallery-item">
+                    <img src="images/gallery-1.webp" srcset="images/gallery-1-480.webp 480w, images/gallery-1.webp 738w" sizes="(max-width: 640px) 92vw, 440px" alt="Laminado de cejas en Armenia Quindio - Moritas Estudio de Belleza" width="738" height="1304" loading="lazy">
+                    <div class="gallery-item-overlay"><span data-es="Laminado de Cejas" data-en="Brow Lamination">Laminado de Cejas</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-2.webp" srcset="images/gallery-2-480.webp 480w, images/gallery-2.webp 738w" sizes="(max-width: 640px) 92vw, 440px" alt="Extensiones de pestanas volumen tecnol&oacute;gico Armenia - Moritas Beauty Studio" width="738" height="1304" loading="lazy">
+                    <div class="gallery-item-overlay"><span data-es="Extensiones Volumen" data-en="Volume Extensions">Extensiones Volumen</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-3.webp" srcset="images/gallery-3-480.webp 480w, images/gallery-3.webp 900w" sizes="(max-width: 640px) 92vw, 440px" alt="Lash Lifting pestanas Armenia Quindio - Moritas Estudio" width="900" height="1125" loading="lazy">
+                    <div class="gallery-item-overlay"><span>Lash Lifting</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-4.webp" srcset="images/gallery-4-480.webp 480w, images/gallery-4.webp 900w" sizes="(max-width: 640px) 92vw, 440px" alt="Diseno de cejas profesional Armenia - Moritas Beauty Studio" width="900" height="1200" loading="lazy">
+                    <div class="gallery-item-overlay"><span data-es="Dise&ntilde;o de Cejas" data-en="Brow Design">Dise&ntilde;o de Cejas</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-5.webp" srcset="images/gallery-5-480.webp 480w, images/gallery-5.webp 738w" sizes="(max-width: 640px) 92vw, 440px" alt="Pestanas volumen tecnologico Armenia Quindio - Moritas Estudio de Belleza" width="738" height="1304" loading="lazy">
+                    <div class="gallery-item-overlay"><span data-es="Volumen Tecnol&oacute;gico" data-en="Tech Volume">Volumen Tecnol&oacute;gico</span></div>
+                </div>
+            </div>
+            <div class="instagram-cta animate-on-scroll">
+                <a href="https://www.instagram.com/moritas_beauty_studio" class="btn btn-instagram" target="_blank" rel="noopener noreferrer">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    <span data-es="Ver M&aacute;s en Instagram" data-en="See More on Instagram">Ver M&aacute;s en Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- GUIDES -->
     <section class="guides" id="guias">
         <div class="container">
@@ -2207,7 +2322,7 @@
                 <h2 class="section-title" data-es="Aprende Antes de tu Cita" data-en="Learn Before Your Appointment">Aprende Antes de tu Cita</h2>
                 <p class="section-subtitle" data-es="Consejos de nuestro estudio para elegir el tratamiento ideal y cuidar tus resultados por m&aacute;s tiempo." data-en="Tips from our studio to choose the right treatment and make your results last longer (in Spanish).">Consejos de nuestro estudio para elegir el tratamiento ideal y cuidar tus resultados por m&aacute;s tiempo.</p>
             </div>
-            <div class="guides-grid">
+            <div class="mobile-scroller guides-grid">
                 <a class="guide-card animate-on-scroll delay-1" href="/blog/lash-lifting-vs-extensiones-de-pestanas/">
                     <img src="images/service-lash-lifting.webp" srcset="images/service-lash-lifting-480.webp 480w, images/service-lash-lifting.webp 738w" sizes="(max-width: 640px) 92vw, 440px" alt="Lash lifting vs extensiones de pesta&ntilde;as" width="738" height="1304" loading="lazy">
                     <div>
@@ -2411,7 +2526,7 @@
                 <div class="footer-brand">
                     <img src="images/brand/moritas-logo.webp" alt="Moritas Cejas y Pesta&ntilde;as" class="footer-logo logo-light" width="480" height="114" loading="lazy">
                     <img src="images/brand/moritas-logo-light.webp" alt="" class="footer-logo logo-dark" width="480" height="114" loading="lazy">
-                    <p data-es="Expertas en cejas y pesta&ntilde;as en Armenia, Quind&iacute;o. Realzando tu belleza natural con t&eacute;cnicas de vanguardia y productos premium." data-en="Brow and lash experts in Armenia, Quind&iacute;o. Enhancing your natural beauty with cutting-edge techniques and premium products.">Expertas en cejas y pesta&ntilde;as en Armenia, Quind&iacute;o. Realzando tu belleza natural con t&eacute;cnicas de vanguardia y productos premium.</p>
+                    <p data-es="Expertas en cejas y pesta&ntilde;as en Armenia, Quind&iacute;o." data-en="Brow and lash experts in Armenia, Quind&iacute;o.">Expertas en cejas y pesta&ntilde;as en Armenia, Quind&iacute;o.</p>
                     <div class="footer-social">
                         <a href="https://www.instagram.com/moritas_beauty_studio" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></a>
                         <a href="https://wa.me/573028386938" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></a>
@@ -2420,47 +2535,50 @@
                 <div class="footer-links">
                     <h4 data-es="Servicios" data-en="Services">Servicios</h4>
                     <ul>
-                        <li><a href="/laminado-de-cejas-armenia/" data-es="Laminado de Cejas" data-en="Brow Lamination">Laminado de Cejas</a></li>
-                        <li><a href="/lash-lifting-armenia/">Lash Lifting</a></li>
-                        <li><a href="/extensiones-de-pestanas-armenia/" data-es="Extensiones de Pesta&ntilde;as" data-en="Lash Extensions">Extensiones de Pesta&ntilde;as</a></li>
-                        <li><a href="/diseno-de-cejas-armenia/" data-es="Dise&ntilde;o de Cejas" data-en="Brow Design">Dise&ntilde;o de Cejas</a></li>
+                        <li><a href="/extensiones-de-pestanas-armenia/" data-es="Extensiones de pesta&ntilde;as" data-en="Lash extensions">Extensiones de pesta&ntilde;as</a></li>
+                        <li><a href="/lash-lifting-armenia/">Lash lifting</a></li>
+                        <li><a href="/laminado-de-cejas-armenia/" data-es="Laminado de cejas" data-en="Brow lamination">Laminado de cejas</a></li>
+                        <li><a href="/diseno-de-cejas-armenia/" data-es="Dise&ntilde;o de cejas" data-en="Brow design">Dise&ntilde;o de cejas</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 data-es="Navegaci&oacute;n" data-en="Navigation">Navegaci&oacute;n</h4>
+                    <h4 data-es="Explora" data-en="Explore">Explora</h4>
                     <ul>
-                        <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
-                        <li><a href="#sobre-mi" data-es="Sobre Nosotras" data-en="About Us">Sobre Nosotras</a></li>
+                        <li><a href="#resultados" data-es="Antes y despu&eacute;s" data-en="Before &amp; after">Antes y despu&eacute;s</a></li>
                         <li><a href="#precios" data-es="Precios" data-en="Pricing">Precios</a></li>
-                        <li><a href="#faq" data-es="Preguntas" data-en="FAQ">Preguntas</a></li>
-                        <li><a href="/blog/" data-es="Gu&iacute;as y Consejos" data-en="Guides &amp; Tips">Gu&iacute;as y Consejos</a></li>
+                        <li><a href="/blog/" data-es="Gu&iacute;as y consejos" data-en="Guides &amp; tips">Gu&iacute;as y consejos</a></li>
+                        <li><a href="#faq" data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
                     <ul>
-                        <li><a href="https://wa.me/573028386938" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        <li><a href="https://wa.me/573028386938" target="_blank" rel="noopener noreferrer">WhatsApp 302 838 6938</a></li>
                         <li><a href="https://www.instagram.com/moritas_beauty_studio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                        <li><a href="#ubicacion" data-es="Ubicaci&oacute;n" data-en="Location">Ubicaci&oacute;n</a></li>
+                        <li><a href="#ubicacion" data-es="Ubicaci&oacute;n y horario" data-en="Location &amp; hours">Ubicaci&oacute;n y horario</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Moritas%20Cejas%20y%20Pesta%C3%B1as%20Armenia%20Quind%C3%ADo" target="_blank" rel="noopener noreferrer" data-es="D&eacute;janos tu rese&ntilde;a" data-en="Leave a review">D&eacute;janos tu rese&ntilde;a</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-es="Moritas Estudio de Belleza &mdash; Cejas y pesta&ntilde;as en Armenia, Quind&iacute;o. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida, Salento, Filandia y todo el Eje Cafetero." data-en="Moritas Beauty Studio &mdash; Brows and lashes in Armenia, Quind&iacute;o. Serving clients from Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida, Salento, Filandia and the entire Coffee Region.">Moritas Estudio de Belleza &mdash; Cejas y pesta&ntilde;as en Armenia, Quind&iacute;o. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida, Salento, Filandia y todo el Eje Cafetero.</p>
-                <p>&copy; 2026 Moritas Estudio de Belleza. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span> &mdash; Armenia, Quind&iacute;o, Colombia</p>
+                <p>&copy; 2026 Moritas Estudio de Belleza &middot; <span data-es="Cejas y pesta&ntilde;as en Armenia, Quind&iacute;o, Colombia" data-en="Brows &amp; lashes in Armenia, Quind&iacute;o, Colombia">Cejas y pesta&ntilde;as en Armenia, Quind&iacute;o, Colombia</span></p>
+                <nav class="footer-legal-links" aria-label="Informaci&oacute;n legal">
+                    <a href="/terminos/" data-es="T&eacute;rminos y condiciones" data-en="Terms &amp; conditions">T&eacute;rminos y condiciones</a>
+                    <a href="/terminos/#acerca-del-sitio" data-es="Acerca de" data-en="About this site">Acerca de</a>
+                </nav>
             </div>
         </div>
     </footer>
 
     <!-- WHATSAPP POPUP -->
-    <div class="wa-popup" id="waPopup">
+    <div class="wa-popup" id="waPopup" role="dialog" aria-label="Chat de WhatsApp con Moritas">
         <div class="wa-popup-header">
             <div class="wa-popup-avatar"><img src="images/brand/moritas-sello-240.webp" alt="Moritas" width="44" height="44"></div>
             <div>
                 <div class="wa-popup-name">Moritas</div>
                 <div class="wa-popup-status" data-es="En l&iacute;nea | Responde r&aacute;pido" data-en="Online | Quick reply">En l&iacute;nea | Responde r&aacute;pido</div>
             </div>
-            <button class="wa-popup-close" onclick="toggleWaPopup()">&times;</button>
+            <button class="wa-popup-close" onclick="toggleWaPopup()" aria-label="Cerrar">&times;</button>
         </div>
         <div class="wa-popup-body">
             <div class="wa-popup-msg">
@@ -2476,7 +2594,7 @@
     </div>
 
     <!-- WHATSAPP FLOAT -->
-    <button class="whatsapp-float" id="waFloat" onclick="toggleWaPopup()" aria-label="WhatsApp">
+    <button class="whatsapp-float" id="waFloat" onclick="toggleWaPopup()" aria-label="Abrir chat de WhatsApp" aria-controls="waPopup" aria-expanded="false">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </button>
 
@@ -2494,77 +2612,6 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // ===== PARTICLES (disabled on mobile for performance) =====
-        (function() {
-            if (window.innerWidth < 768) return;
-            const canvas = document.getElementById('particles-canvas');
-            const ctx = canvas.getContext('2d');
-            let particles = [];
-            let w, h;
-
-            function resize() {
-                w = canvas.width = window.innerWidth;
-                h = canvas.height = window.innerHeight;
-            }
-
-            function createParticles() {
-                particles = [];
-                const count = Math.min(Math.floor(w * h / 18000), 60);
-                for (let i = 0; i < count; i++) {
-                    particles.push({
-                        x: Math.random() * w,
-                        y: Math.random() * h,
-                        r: Math.random() * 2.5 + 0.5,
-                        dx: (Math.random() - 0.5) * 0.4,
-                        dy: (Math.random() - 0.5) * 0.4,
-                        opacity: Math.random() * 0.5 + 0.2
-                    });
-                }
-            }
-
-            function draw() {
-                ctx.clearRect(0, 0, w, h);
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                particles.forEach(p => {
-                    p.x += p.dx;
-                    p.y += p.dy;
-                    if (p.x < 0 || p.x > w) p.dx *= -1;
-                    if (p.y < 0 || p.y > h) p.dy *= -1;
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    ctx.fillStyle = isDark
-                        ? 'rgba(231, 166, 211, ' + p.opacity + ')'
-                        : 'rgba(142, 63, 114, ' + p.opacity + ')';
-                    ctx.fill();
-                });
-
-                // Draw connections
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < 120) {
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = isDark
-                                ? 'rgba(231, 166, 211, ' + (0.08 * (1 - dist / 120)) + ')'
-                                : 'rgba(142, 63, 114, ' + (0.06 * (1 - dist / 120)) + ')';
-                            ctx.lineWidth = 0.5;
-                            ctx.stroke();
-                        }
-                    }
-                }
-                requestAnimationFrame(draw);
-            }
-
-            resize();
-            createParticles();
-            draw();
-            window.addEventListener('resize', () => { resize(); createParticles(); });
-        })();
-
         // ===== LANGUAGE =====
         let currentLang = 'es';
 
@@ -2683,21 +2730,35 @@
 
         // ===== WHATSAPP POPUP =====
         let waPopupOpen = false;
-        function toggleWaPopup() {
-            waPopupOpen = !waPopupOpen;
-            document.getElementById('waPopup').classList.toggle('active', waPopupOpen);
+        let waUserInteracted = false;
+
+        function setWaPopup(open) {
+            waPopupOpen = open;
+            document.getElementById('waPopup').classList.toggle('active', open);
+            document.body.classList.toggle('wa-open', open);
+            document.getElementById('waFloat').setAttribute('aria-expanded', open ? 'true' : 'false');
         }
 
-        // Auto-show popup after 10 seconds (only once per session)
-        if (!sessionStorage.getItem('waPopupShown')) {
-            setTimeout(() => {
-                if (!waPopupOpen) {
-                    waPopupOpen = true;
-                    document.getElementById('waPopup').classList.add('active');
-                    sessionStorage.setItem('waPopupShown', '1');
-                }
-            }, 10000);
+        function toggleWaPopup() {
+            waUserInteracted = true;
+            setWaPopup(!waPopupOpen);
         }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && waPopupOpen) setWaPopup(false); });
+        document.addEventListener('click', e => {
+            if (waPopupOpen && !e.target.closest('#waPopup') && !e.target.closest('#waFloat')) setWaPopup(false);
+        });
+
+        // Gentle nudge on desktop only: once per visit, and never after the visitor has used the button
+        try {
+            if (window.matchMedia('(min-width: 769px)').matches && !sessionStorage.getItem('waPopupShown')) {
+                setTimeout(() => {
+                    if (waUserInteracted || waPopupOpen) return;
+                    setWaPopup(true);
+                    sessionStorage.setItem('waPopupShown', '1');
+                }, 15000);
+            }
+        } catch (e) {}
 
         // ===== BEFORE/AFTER SLIDER =====
         document.querySelectorAll('[data-slider]').forEach(slider => {

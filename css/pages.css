@@ -229,19 +229,22 @@ tr:last-child td { border-bottom: none; }
 .cta-band .btn:hover { transform: translateY(-2px); }
 
 /* ===== FOOTER ===== */
-.site-footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 56px 0 28px; font-size: 0.86rem; }
-.footer-cols { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 36px; }
+.site-footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 40px 0 20px; font-size: 0.84rem; }
+.footer-cols { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 28px; margin-bottom: 22px; }
 .footer-cols h2 {
     font-family: var(--font-body); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 2px;
     color: var(--text-accent); margin-bottom: 16px;
 }
 .footer-cols ul { list-style: none; }
-.footer-cols li { margin-bottom: 8px; }
+.footer-cols li { margin-bottom: 5px; }
 .footer-cols a { color: var(--text-secondary); text-decoration: none; }
 .footer-cols a:hover { color: var(--text-accent); }
 .footer-cols p { color: var(--text-secondary); }
-.footer-cols img { height: 72px; width: auto; margin-bottom: 14px; }
-.footer-legal { border-top: 1px solid var(--border); padding-top: 20px; text-align: center; font-size: 0.78rem; color: var(--text-secondary); }
+.footer-cols img { height: 56px; width: auto; margin-bottom: 10px; }
+.footer-legal { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 0.76rem; color: var(--text-secondary); }
+.footer-legal nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.footer-legal a { color: var(--text-secondary); text-decoration: underline; text-underline-offset: 3px; }
+.footer-legal a:hover { color: var(--text-accent); }
 
 /* ===== WHATSAPP ===== */
 .wa-float {
@@ -267,7 +270,10 @@ tr:last-child td { border-bottom: none; }
     .section { padding: 52px 0; }
     .two-col { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: 1fr 1fr; }
-    .footer-cols { grid-template-columns: 1fr; }
+    .footer-cols { grid-template-columns: 1fr 1fr; gap: 20px 14px; }
+    .footer-cols > div:first-child { grid-column: 1 / -1; }
+    .footer-legal { flex-direction: column; align-items: center; text-align: center; }
+    .site-footer { padding-bottom: 24px; }
     .hero-actions .btn { width: 100%; }
     .wa-float { display: none; }
     .sticky-cta {
