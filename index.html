@@ -11,8 +11,8 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="geo.region" content="CO-QUI">
     <meta name="geo.placename" content="Armenia, Quindio">
-    <meta name="geo.position" content="4.5339;-75.6811">
-    <meta name="ICBM" content="4.5339, -75.6811">
+    <meta name="geo.position" content="4.5379549;-75.6683433">
+    <meta name="ICBM" content="4.5379549, -75.6683433">
     <meta name="language" content="Spanish">
     <meta name="revisit-after" content="7 days">
     <meta name="rating" content="general">
@@ -51,6 +51,7 @@
         "alternateName": ["Moritas Cejas y Pestañas", "Moritas Beauty Studio"],
         "description": "Especialistas en extensiones de pestanas, lash lifting, laminado y diseno de cejas en Armenia, Quindio. Productos premium y bioseguridad certificada.",
         "url": "https://cejasypestanasarmenia.com/",
+        "hasMap": "https://maps.google.com/?cid=1667554279279600482",
         "telephone": "+573028386938",
         "image": "https://cejasypestanasarmenia.com/images/og-image.jpg",
         "logo": "https://cejasypestanasarmenia.com/images/brand/icon-512.png",
@@ -59,12 +60,12 @@
             "addressLocality": "Armenia",
             "addressRegion": "Quindio",
             "addressCountry": "CO",
-            "postalCode": "630001"
+            "postalCode": "630004"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "4.5339",
-            "longitude": "-75.6811"
+            "latitude": "4.5379549",
+            "longitude": "-75.6683433"
         },
         "areaServed": [
             {"@type": "City", "name": "Armenia", "containedInPlace": {"@type": "AdministrativeArea", "name": "Quindio"}},
@@ -102,7 +103,8 @@
         ],
         "sameAs": [
             "https://www.instagram.com/moritas_beauty_studio",
-            "https://wa.me/573028386938"
+            "https://wa.me/573028386938",
+            "https://maps.google.com/?cid=1667554279279600482"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -159,37 +161,7 @@
                     "price": "90000"
                 }
             ]
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "bestRating": "5",
-            "worstRating": "1",
-            "ratingCount": "87"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "author": {"@type": "Person", "name": "Carolina M."},
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "reviewBody": "Moritas es increible. Me hicieron un laminado y diseno de cejas que se ve completamente natural. Todas me preguntan donde me hice las cejas. 100% recomendadas.",
-                "datePublished": "2026-03-15"
-            },
-            {
-                "@type": "Review",
-                "author": {"@type": "Person", "name": "Valentina P."},
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "reviewBody": "Las extensiones quedaron perfectas, se ven super naturales y me ahorro mucho tiempo en maquillaje. El estudio es muy profesional y limpio.",
-                "datePublished": "2026-03-02"
-            },
-            {
-                "@type": "Review",
-                "author": {"@type": "Person", "name": "Laura R."},
-                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                "reviewBody": "El lash lifting fue una revelacion. Mis pestanas se ven largas y rizadas sin extensiones. Vuelvo cada 6 semanas. Las amo!",
-                "datePublished": "2026-02-20"
-            }
-        ]
+        }
     }
     </script>
 
@@ -260,7 +232,7 @@
                 "name": "Cual es el mejor estudio de cejas y pestanas en Armenia?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Moritas Estudio de Belleza es reconocido como el mejor centro de cejas y pestanas en Armenia, Quindio, con calificacion de 5 estrellas en Google y mas de 500 procedimientos realizados. Atendemos clientas de Armenia, Calarca, Montenegro, Circasia, La Tebaida y todo el Eje Cafetero."
+                    "text": "Moritas Estudio de Belleza es reconocido como el mejor centro de cejas y pestanas en Armenia, Quindio, con mas de 500 procedimientos realizados. Atendemos clientas de Armenia, Calarca, Montenegro, Circasia, La Tebaida y todo el Eje Cafetero."
                 }
             },
             {
@@ -1702,6 +1674,15 @@
             border-radius: var(--radius); padding: 22px 28px; box-shadow: var(--shadow-card);
         }
         .gr-score { display: flex; align-items: center; gap: 14px; }
+        .gr-icon {
+            width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0; background: var(--accent-light);
+            color: var(--star); display: flex; align-items: center; justify-content: center;
+        }
+        .gr-icon .icon { width: 24px; height: 24px; }
+        .gr-title { font-weight: 600; font-size: 1rem; color: var(--text-primary); margin-bottom: 2px; }
+        .location-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .location-actions .btn { padding: 12px 24px; font-size: 0.86rem; }
+        .location-actions .icon { width: 18px; height: 18px; }
         .gr-number { font-family: var(--font-heading); font-size: 2.4rem; font-weight: 700; color: var(--text-primary); line-height: 1; }
         .gr-stars { color: var(--star); letter-spacing: 2px; font-size: 1rem; }
         .gr-label { font-size: 0.84rem; color: var(--text-secondary); }
@@ -1785,7 +1766,9 @@
             .pricing-card { padding: 26px 20px; }
             .testimonial-card { padding: 24px; }
             .google-reviews { padding: 18px; flex-direction: column; align-items: stretch; }
-            .gr-actions .btn { flex: 1; justify-content: center; }
+            .gr-actions { flex-direction: column; }
+            .gr-actions .btn { width: 100%; justify-content: center; }
+            .location-actions .btn { flex: 1; justify-content: center; }
             .ba-slider-container img, .ba-slider-after, .ba-showcase-item img, .ba-video-item video { height: 300px; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 22px 16px; }
             .footer-brand { grid-column: 1 / -1; }
@@ -1894,8 +1877,8 @@
                         <div class="stat-label" data-es="Clientas Felices" data-en="Happy Clients">Clientas Felices</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">5.0</div>
-                        <div class="stat-label" data-es="Calificaci&oacute;n" data-en="Rating">Calificaci&oacute;n</div>
+                        <div class="stat-number">1:1</div>
+                        <div class="stat-label" data-es="Atenci&oacute;n Personalizada" data-en="Personal Attention">Atenci&oacute;n Personalizada</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">100%</div>
@@ -1933,7 +1916,7 @@
                 </a>
                 <a href="#testimonios" class="trust-item">
                     <div class="trust-icon"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-star"/></svg></div>
-                    <span data-es="5 Estrellas Google" data-en="5 Stars Google">5 Estrellas Google</span>
+                    <span data-es="Clientas Felices" data-en="Happy Clients">Clientas Felices</span>
                 </a>
                 <a href="#ubicacion" class="trust-item">
                     <div class="trust-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></div>
@@ -2191,15 +2174,15 @@
             </div>
             <div class="google-reviews animate-on-scroll">
                 <div class="gr-score">
-                    <div class="gr-number">5.0</div>
+                    <div class="gr-icon"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-star"/></svg></div>
                     <div>
-                        <div class="gr-stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="gr-label" data-es="Calificaci&oacute;n de nuestras clientas en &lt;strong&gt;Google&lt;/strong&gt;" data-en="Our clients' rating on &lt;strong&gt;Google&lt;/strong&gt;">Calificaci&oacute;n de nuestras clientas en <strong>Google</strong></div>
+                        <div class="gr-title" data-es="&iquest;Ya nos visitaste? Calif&iacute;canos en Google" data-en="Already visited us? Rate us on Google">&iquest;Ya nos visitaste? Calif&iacute;canos en Google</div>
+                        <div class="gr-label" data-es="Tu rese&ntilde;a ayuda a otras mujeres de Armenia a encontrarnos. Toma menos de un minuto." data-en="Your review helps other women in Armenia find us. It takes less than a minute.">Tu rese&ntilde;a ayuda a otras mujeres de Armenia a encontrarnos. Toma menos de un minuto.</div>
                     </div>
                 </div>
                 <div class="gr-actions">
-                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Moritas%20Cejas%20y%20Pesta%C3%B1as%20Armenia%20Quind%C3%ADo" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-es="Ver rese&ntilde;as" data-en="See reviews">Ver rese&ntilde;as</a>
-                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Moritas%20Cejas%20y%20Pesta%C3%B1as%20Armenia%20Quind%C3%ADo" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-star"/></svg><span data-es="D&eacute;janos tu rese&ntilde;a" data-en="Leave us a review">D&eacute;janos tu rese&ntilde;a</span></a>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Moritas%20Estudio%20de%20Belleza&amp;query_place_id=ChIJT-CHQ1f1OI4RYqMkLMhXJBc" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-es="Ver en Google Maps" data-en="View on Google Maps">Ver en Google Maps</a>
+                    <a href="https://search.google.com/local/writereview?placeid=ChIJT-CHQ1f1OI4RYqMkLMhXJBc" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-star"/></svg><span data-es="Dejar mi rese&ntilde;a" data-en="Leave my review">Dejar mi rese&ntilde;a</span></a>
                 </div>
             </div>
         </div>
@@ -2428,7 +2411,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p data-es="Moritas Estudio de Belleza es reconocido como el mejor centro de cejas y pesta&ntilde;as en Armenia, Quind&iacute;o, con calificaci&oacute;n de 5 estrellas en Google y m&aacute;s de 500 procedimientos realizados. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida y todo el Eje Cafetero." data-en="Moritas Beauty Studio is recognized as the best brow and lash center in Armenia, Quind&iacute;o, with a 5-star Google rating and over 500 procedures performed. We serve clients from Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida and the entire Coffee Region.">Moritas Estudio de Belleza es reconocido como el mejor centro de cejas y pesta&ntilde;as en Armenia, Quind&iacute;o, con calificaci&oacute;n de 5 estrellas en Google y m&aacute;s de 500 procedimientos realizados. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida y todo el Eje Cafetero.</p>
+                        <p data-es="Moritas Estudio de Belleza es reconocido como el mejor centro de cejas y pesta&ntilde;as en Armenia, Quind&iacute;o, con m&aacute;s de 500 procedimientos realizados. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida y todo el Eje Cafetero." data-en="Moritas Beauty Studio is recognized as the best brow and lash center in Armenia, Quind&iacute;o, with over 500 procedures performed. We serve clients from Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida and the entire Coffee Region.">Moritas Estudio de Belleza es reconocido como el mejor centro de cejas y pesta&ntilde;as en Armenia, Quind&iacute;o, con m&aacute;s de 500 procedimientos realizados. Atendemos clientas de Armenia, Calarc&aacute;, Montenegro, Circasia, La Tebaida y todo el Eje Cafetero.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2467,7 +2450,8 @@
                         <div class="location-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></div>
                         <div>
                             <h4 data-es="Direcci&oacute;n" data-en="Address">Direcci&oacute;n</h4>
-                            <p data-es="Armenia, Quind&iacute;o, Colombia" data-en="Armenia, Quind&iacute;o, Colombia">Armenia, Quind&iacute;o, Colombia</p>
+                            <p>Armenia, Quind&iacute;o 630004, Colombia</p>
+                            <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Moritas%20Estudio%20de%20Belleza&amp;query_place_id=ChIJT-CHQ1f1OI4RYqMkLMhXJBc" target="_blank" rel="noopener noreferrer" style="color:var(--text-accent)" data-es="Ver en Google Maps" data-en="View on Google Maps">Ver en Google Maps</a></p>
                         </div>
                     </div>
                     <div class="location-detail">
@@ -2492,9 +2476,13 @@
                             <p data-es="Domingos: Solo con cita previa" data-en="Sundays: By appointment only">Domingos: Solo con cita previa</p>
                         </div>
                     </div>
+                    <div class="location-actions">
+                        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Moritas%20Estudio%20de%20Belleza&amp;destination_place_id=ChIJT-CHQ1f1OI4RYqMkLMhXJBc" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-es="C&oacute;mo llegar" data-en="Get directions">C&oacute;mo llegar</span></a>
+                        <a href="https://search.google.com/local/writereview?placeid=ChIJT-CHQ1f1OI4RYqMkLMhXJBc" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-es="Dejar una rese&ntilde;a" data-en="Leave a review">Dejar una rese&ntilde;a</a>
+                    </div>
                 </div>
                 <div class="location-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63663.94942!2d-75.72!3d4.534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38f5d3bae0b6e5%3A0x3e4c24c7c3a9a082!2sArmenia%2C%20Quind%C3%ADo%2C%20Colombia!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Moritas Estudio de Belleza - Armenia, Quindio"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=Moritas%20Estudio%20de%20Belleza%2C%20Armenia%2C%20Quind%C3%ADo&amp;ll=4.5379549,-75.6683433&amp;z=16&amp;hl=es&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicaci&oacute;n de Moritas Estudio de Belleza en Google Maps"></iframe>
                 </div>
             </div>
         </div>
@@ -2556,7 +2544,7 @@
                         <li><a href="https://wa.me/573028386938" target="_blank" rel="noopener noreferrer">WhatsApp 302 838 6938</a></li>
                         <li><a href="https://www.instagram.com/moritas_beauty_studio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                         <li><a href="#ubicacion" data-es="Ubicaci&oacute;n y horario" data-en="Location &amp; hours">Ubicaci&oacute;n y horario</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Moritas%20Cejas%20y%20Pesta%C3%B1as%20Armenia%20Quind%C3%ADo" target="_blank" rel="noopener noreferrer" data-es="D&eacute;janos tu rese&ntilde;a" data-en="Leave a review">D&eacute;janos tu rese&ntilde;a</a></li>
+                        <li><a href="https://search.google.com/local/writereview?placeid=ChIJT-CHQ1f1OI4RYqMkLMhXJBc" target="_blank" rel="noopener noreferrer" data-es="D&eacute;janos tu rese&ntilde;a" data-en="Leave a review">D&eacute;janos tu rese&ntilde;a</a></li>
                     </ul>
                 </div>
             </div>
